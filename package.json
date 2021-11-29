@@ -12,6 +12,8 @@
     "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
+    "element-plus": "^1.2.0-beta.4",
+    "unplugin-vue-components": "^0.17.2",
     "vue": "^3.2.16"
   },
   "devDependencies": {

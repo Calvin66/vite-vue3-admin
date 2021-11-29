@@ -8,6 +8,12 @@
  - | prettier配置修改 | [999e962](https://github.com/Calvin66/viti-vue3-admin/commit/999e962)
 
 
+### 📦 持续集成
+范围|描述|commitId
+--|--|--
+ - | git changelog | [0039724](https://github.com/Calvin66/viti-vue3-admin/commit/0039724)
+
+
 范围|描述|commitId
 --|--|--
  - | feat:使用prettier格式化代码风格 | [e9a4930](https://github.com/Calvin66/viti-vue3-admin/commit/e9a4930)
