@@ -6,16 +6,24 @@ module.exports = {
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue
-    'plugin:vue/vue3-essential',
-    // https://github.com/vuejs/eslint-config-standard
-    '@vue/standard'
+    'plugin:vue/vue3-essential',"eslint:recommended", "@vue/prettier"
   ],
+  parserOptions: {
+    ecmaVersion: 2020,
+  },
   rules: {
     'no-undef': 0, // 禁用未声明的变量，除非它们在 /*global */ 注释中被提到
     'no-unused-vars': [1, {
       'vars': 'all', // 检测所有变量，包括全局环境中的变量。
       'args': 'none' // 不检查参数。
     }], // 禁止出现未使用过的变量
+    // "prettier/prettier": [
+    //   "error",
+    //   {
+    //     semi: false, // 是否使用分号, 默认true
+    //     singleQuote: true, // 使用单引号, 默认false(在jsx中配置无效, 默认都是双引号)
+    //   },
+    // ],
   }
   //“关闭”或0-关闭规则;“警告”或1-将规则作为警告（不会影响退出代码）;“错误”或2-将规则作为错误打开（退出代码为1   触发）
   // rules: {
