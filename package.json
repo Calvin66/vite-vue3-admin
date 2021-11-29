@@ -3,23 +3,13 @@
   "version": "0.0.0",
   "license": "ISC",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
     "serve": "vite preview",
+    "build": "vite build",
+    "lint": "eslint src/**/*.{js,jsx,vue,ts,tsx} --fix",
+    "cz": "npm run log && git add . && git cz",
+    "dev": "vite",
     "lint-staged": "lint-staged",
-    "lint": "eslint src/**/*.{js,jsx,vue,ts,tsx} --fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,vue,jsx,tsx}": [
-      "prettier --write",
-      "eslint --cache --fix",
-      "git add"
-    ]
+    "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "vue": "^3.2.16"
@@ -29,12 +19,35 @@
     "@vue/cli-plugin-eslint": "^4.5.15",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
+    "commitizen": "^4.0.3",
+    "commitlint": "^8.2.0",
+    "conventional-changelog-cli": "^2.0.28",
     "eslint": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.1.1",
     "husky": "4.2.5",
     "lint-staged": "^12.1.2",
     "prettier": "^2.5.0",
-    "vite": "^2.6.4"
+    "right-pad": "^1.0.1",
+    "vite": "^2.6.4",
+    "vue-cli-plugin-commitlint": "^1.0.12"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/vue-cli-plugin-commitlint/lib/cz"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue,jsx,tsx}": [
+      "prettier --write",
+      "eslint --cache --fix",
+      "git add"
+    ]
   }
 }
