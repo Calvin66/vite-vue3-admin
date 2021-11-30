@@ -8,6 +8,7 @@ module.exports = {
     // https://github.com/vuejs/eslint-plugin-vue
     'plugin:vue/vue3-essential',"eslint:recommended", "@vue/prettier"
   ],
+  plugins: ["simple-import-sort"],
   parserOptions: {
     ecmaVersion: 2020,
   },
@@ -19,5 +20,7 @@ module.exports = {
     }], // 禁止出现未使用过的变量
     "vue/no-export-in-script-setup":0,
     "vue/multi-word-component-names":0,
+    "simple-import-sort/imports": 1, // imports文件排序
+    "simple-import-sort/exports": 1 // exports文件排序
   }
 }

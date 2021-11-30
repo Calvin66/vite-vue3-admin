@@ -4,6 +4,7 @@
 范围|描述|commitId
 --|--|--
  - | 按需引入element-plus | [d3f39dc](https://github.com/Calvin66/viti-vue3-admin/commit/d3f39dc)
+ - | 配置路由、新增登录页 | [fdf4948](https://github.com/Calvin66/viti-vue3-admin/commit/fdf4948)
  - | 添加commitlint | [2ee4c8a](https://github.com/Calvin66/viti-vue3-admin/commit/2ee4c8a)
  - | 添加git提交代码校验 | [a59be60](https://github.com/Calvin66/viti-vue3-admin/commit/a59be60)
  - | prettier配置修改 | [999e962](https://github.com/Calvin66/viti-vue3-admin/commit/999e962)
