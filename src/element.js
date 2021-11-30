@@ -1,5 +1,7 @@
 import {
   ElButton,
+  ElInput,
+  ElForm,
   ElTable,
   ElAlert,
   ElAside,
@@ -11,6 +13,8 @@ import {
 
 export const elcomponents = [
   ElButton,
+  ElInput,
+  ElForm,
   ElTable,
   ElAlert,
   ElAside,
