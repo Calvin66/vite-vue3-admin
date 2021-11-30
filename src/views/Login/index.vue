@@ -91,59 +91,68 @@ export default {
   width: 100%;
   height: 100%;
   background-color: #2d3a4b;
+
   .login-form {
     position: absolute;
-    left: 50%;
     top: 50%;
-    width: 400px;
-    padding: 30px;
+    left: 50%;
     border: 2px solid #5270fd;
+    padding: 30px;
+    width: 400px;
     box-sizing: border-box;
     transform: translate(-50%, -50%);
+
     .login-title {
-      width: 100%;
       margin-bottom: 10px;
+      width: 100%;
       font-size: 20px;
-      line-height: 50px;
-      color: #fff;
       text-align: center;
+      color: #ffffff;
+      line-height: 50px;
     }
+
     .login-btn {
       text-align: center;
+
       button {
+        margin-bottom: 10px;
         width: 100%;
         height: 36px;
-        margin-bottom: 10px;
       }
     }
+
     .icon {
       position: absolute;
       width: 20px;
       height: 20px;
     }
+
     .icon-l-t {
-      left: -3px;
       bottom: -3px;
-      border-left: 3px solid #20a3f5;
-      border-bottom: 3px solid #20a3f5;
-    }
-    .icon-l-b {
       left: -3px;
-      top: -3px;
+      border-bottom: 3px solid #20a3f5;
       border-left: 3px solid #20a3f5;
-      border-top: 3px solid #20a3f5;
     }
+
+    .icon-l-b {
+      top: -3px;
+      left: -3px;
+      border-top: 3px solid #20a3f5;
+      border-left: 3px solid #20a3f5;
+    }
+
     .icon-r-t {
       right: -3px;
       bottom: -3px;
       border-right: 3px solid #20a3f5;
       border-bottom: 3px solid #20a3f5;
     }
+
     .icon-r-b {
-      right: -3px;
       top: -3px;
-      border-right: 3px solid #20a3f5;
+      right: -3px;
       border-top: 3px solid #20a3f5;
+      border-right: 3px solid #20a3f5;
     }
   }
 }

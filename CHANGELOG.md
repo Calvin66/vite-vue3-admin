@@ -11,6 +11,12 @@
  - | prettier配置修改 | [999e962](https://github.com/Calvin66/viti-vue3-admin/commit/999e962)
 
 
+### 🐛 Bug 修复
+范围|描述|commitId
+--|--|--
+ - | 全局引入ele样式，修复ElMessage显示问题 | [b88b8f6](https://github.com/Calvin66/viti-vue3-admin/commit/b88b8f6)
+
+
 ### 📦 持续集成
 范围|描述|commitId
 --|--|--
