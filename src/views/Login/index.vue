@@ -37,10 +37,11 @@
 </template>
 
 <script>
-import { reactive, ref, toRefs } from 'vue'
 import { ElMessage } from 'element-plus'
+import { reactive, ref, toRefs } from 'vue'
+
 export default {
-  name: ' Login',
+  name: 'Login',
   setup() {
     const state = reactive({
       loginForm: {
