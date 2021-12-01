@@ -1,4 +1,4 @@
-# 0.0.0 (2021-11-30)
+# 0.0.0 (2021-12-01)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -7,6 +7,7 @@
  - | 配置路由、新增登录页 | [fdf4948](https://github.com/Calvin66/viti-vue3-admin/commit/fdf4948)
  - | 添加commitlint | [2ee4c8a](https://github.com/Calvin66/viti-vue3-admin/commit/2ee4c8a)
  - | 添加git提交代码校验 | [a59be60](https://github.com/Calvin66/viti-vue3-admin/commit/a59be60)
+ - | 新增stylelint:校验css样式 | [4119f34](https://github.com/Calvin66/viti-vue3-admin/commit/4119f34)
  - | eslint 引入文件排序 | [670d248](https://github.com/Calvin66/viti-vue3-admin/commit/670d248)
  - | prettier配置修改 | [999e962](https://github.com/Calvin66/viti-vue3-admin/commit/999e962)
 
