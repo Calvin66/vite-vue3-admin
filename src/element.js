@@ -8,6 +8,8 @@ import {
   ElButton,
   ElForm,
   ElInput,
+  ElLoading,
+  ElMessage,
   ElTable
 } from 'element-plus'
 
@@ -21,5 +23,7 @@ export const elcomponents = [
   ElAutocomplete,
   ElAvatar,
   ElBacktop,
-  ElBadge
+  ElBadge,
+  ElLoading,
+  ElMessage
 ]

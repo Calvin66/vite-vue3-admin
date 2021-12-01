@@ -19,6 +19,7 @@
 范围|描述|commitId
 --|--|--
  - | 全局引入ele样式，修复ElMessage显示问题 | [b88b8f6](https://github.com/Calvin66/viti-vue3-admin/commit/b88b8f6)
+ - | 修复eslint配置导致错误代码没有提示 | [7539434](https://github.com/Calvin66/viti-vue3-admin/commit/7539434)
 
 
 ### 📦 持续集成

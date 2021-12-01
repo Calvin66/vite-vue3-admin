@@ -39,6 +39,7 @@
 <script>
 import { ElMessage } from 'element-plus'
 import { reactive, ref, toRefs } from 'vue'
+import { useStore } from 'vuex'
 
 import { login } from '@/api/user'
 export default {
@@ -67,6 +68,8 @@ export default {
       ]
     }
     const loginFormRef = ref(null)
+    const store = useStore()
+    console.log(store.state.user)
     const submitForm = () => {
       loginFormRef.value.validate((valid) => {
         if (valid) {
@@ -74,9 +77,14 @@ export default {
             username: state.loginForm.username,
             password: state.loginForm.password
           }).then((res) => {
-            console.log(res, '打印数据')
+            const { token, name, role } = res
+            store.commit('user/setUer', {
+              name,
+              role,
+              token
+            })
+            ElMessage.success(res.message)
           })
-          ElMessage.success('登录成功')
         } else {
           return false
         }

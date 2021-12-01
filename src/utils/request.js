@@ -24,7 +24,8 @@ const LoadingInstance = {
     },{
       loading:true
     },{
-      text: '获取列表数据....'
+      text: '获取列表数据....',
+      background: 'rgba(255,255,255,0.1)'
     }
   )
  *
@@ -47,10 +48,15 @@ function request(
       loading: false, // 是否开启loading层效果, 默认为false
       reduct_data_format: true, // 是否开启简洁的数据结构响应, 默认为true
       error_message_show: true, // 是否开启接口错误信息展示,默认为true
-      code_message_show: false // 是否开启code不为0时的信息提示, 默认为false
+      code_message_show: true // 是否开启code不为0时的信息提示, 默认为false
     },
     customOptions
   )
+  // 自定义loading配置
+  const loadingOpts = Object.assign({
+    background: 'rgba(255,255,255,0.1)',
+    loadingOptions
+  })
 
   // 请求拦截
   service.interceptors.request.use(
@@ -63,7 +69,7 @@ function request(
         LoadingInstance._count++
         if (LoadingInstance._count === 1) {
           LoadingInstance._target =
-            ElLoading.service(loadingOptions)
+            ElLoading.service(loadingOpts)
         }
       }
       // 自动携带token
@@ -78,27 +84,28 @@ function request(
     }
   )
 
-  // 响应拦截
+  // 响应拦截(根据项目需求自行配置)
   service.interceptors.response.use(
     (response) => {
+      const data = response.data.data
       removePending(response.config)
       custom_options.loading && closeLoading(custom_options) // 关闭loading
 
       if (
         custom_options.code_message_show &&
-        response.data &&
-        response.data.code !== 0
+        data &&
+        !data.isSuccess
       ) {
         ElMessage({
           type: 'error',
-          message: response.data.message
+          message: data.message
         })
-        return Promise.reject(response.data) // code不等于0, 页面具体逻辑就不执行了
+        return Promise.reject(data) // code不等于0, 页面具体逻辑就不执行了
       }
-
-      return custom_options.reduct_data_format
-        ? response.data
-        : response
+      return data
+      // return custom_options.reduct_data_format
+      //   ? response.data
+      //   : response
     },
     (error) => {
       error.config && removePending(error.config)
