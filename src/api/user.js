@@ -1,11 +1,11 @@
 import request from '@/utils/request'
 
-export function login(username, password) {
+export function login(data) {
   return request(
     {
-      url: '/mock/login.json',
-      method: 'get',
-      data: {}
+      url: '/mock/user/login',
+      method: 'post',
+      data
     },
     { loading: true }
   )

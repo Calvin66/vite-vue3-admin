@@ -40,13 +40,14 @@
 import { ElMessage } from 'element-plus'
 import { reactive, ref, toRefs } from 'vue'
 
+import { login } from '@/api/user'
 export default {
   name: 'Login',
   setup() {
     const state = reactive({
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       }
     })
     const loginRules = {
@@ -69,6 +70,12 @@ export default {
     const submitForm = () => {
       loginFormRef.value.validate((valid) => {
         if (valid) {
+          login({
+            username: state.loginForm.username,
+            password: state.loginForm.password
+          }).then((res) => {
+            console.log(res, '打印数据')
+          })
           ElMessage.success('登录成功')
         } else {
           return false
