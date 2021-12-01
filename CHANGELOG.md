@@ -7,6 +7,7 @@
  - | 配置路由、新增登录页 | [fdf4948](https://github.com/Calvin66/viti-vue3-admin/commit/fdf4948)
  - | 添加commitlint | [2ee4c8a](https://github.com/Calvin66/viti-vue3-admin/commit/2ee4c8a)
  - | 添加git提交代码校验 | [a59be60](https://github.com/Calvin66/viti-vue3-admin/commit/a59be60)
+ - | 新增axios | [212904d](https://github.com/Calvin66/viti-vue3-admin/commit/212904d)
  - | 新增stylelint:校验css样式 | [4119f34](https://github.com/Calvin66/viti-vue3-admin/commit/4119f34)
  - | eslint 引入文件排序 | [670d248](https://github.com/Calvin66/viti-vue3-admin/commit/670d248)
  - | prettier配置修改 | [999e962](https://github.com/Calvin66/viti-vue3-admin/commit/999e962)
