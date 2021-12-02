@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-container" />
+  <div class="sidebar-container">侧边栏目</div>
 </template>
 
 <script>

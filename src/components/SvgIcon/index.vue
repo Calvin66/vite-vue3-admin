@@ -29,6 +29,7 @@ export default {
     }
   },
   setup(props) {
+    console.log(props, '打印111')
     return {
       iconName: computed(() => `#icon-${props.iconClass}`),
       svgClass: computed(() => {

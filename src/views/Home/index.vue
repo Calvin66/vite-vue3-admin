@@ -1,5 +1,5 @@
 <template>
-  <div class="hoem-container">首页</div>
+  <div class="home-container">首页</div>
 </template>
 
 <script>
@@ -9,10 +9,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.red-icon {
-  width: 2rem;
-  height: 2rem;
-  color: red;
-}
-</style>
+<style lang="scss" scoped></style>

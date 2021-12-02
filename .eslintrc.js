@@ -6,7 +6,6 @@ module.exports = {
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser',
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
@@ -32,6 +31,6 @@ module.exports = {
     "vue/multi-word-component-names":0,
     "simple-import-sort/imports": 1, // imports文件排序
     "simple-import-sort/exports": 1,// exports文件排序
-    "prettier/prettier": ["warn", {"singleQuote": true}]
+    "prettier/prettier": ["warn", {"singleQuote": true}],
   }
 }

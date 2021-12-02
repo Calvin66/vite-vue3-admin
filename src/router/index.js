@@ -15,6 +15,14 @@ const router = createRouter({
         )
     },
     {
+      path: '/layout',
+      name: 'home',
+      component: () =>
+        import(
+          /* webpackChunkName: "home" */ '@/layout/index.vue'
+        )
+    },
+    {
       path: '/login',
       name: 'login',
       component: () =>
