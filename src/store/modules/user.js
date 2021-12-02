@@ -17,10 +17,10 @@ export default {
       setToken(token)
     },
     setUer(state, user) {
-      const { username, role, token } = user
-      state.username = username
+      const { name, role, token } = user
+      state.username = name
       state.role = role
-      localstorageSet('username', username)
+      localstorageSet('username', name)
       localstorageSet('role', role)
       state.token = token
       setToken(token)

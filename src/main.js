@@ -1,7 +1,8 @@
-import 'element-plus/theme-chalk/el-message.css'
-import 'element-plus/theme-chalk/el-loading.css'
+import 'element-plus/dist/index.css'
 
 import { createApp } from 'vue'
+
+import SvgIcon from '@/components/SvgIcon/index.vue'
 
 import App from './App.vue'
 import { elcomponents } from './element.js'
@@ -11,9 +12,12 @@ const app = createApp(App)
 app.config.globalProperties.$ELEMENT = {
   // options
 }
-app.use(router)
-app.use(store)
 for (const component of elcomponents) {
   app.component(component.name, component)
 }
-app.mount('#app')
+
+app
+  .component('svg-icon', SvgIcon)
+  .use(store)
+  .use(router)
+  .mount('#app')
