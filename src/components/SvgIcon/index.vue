@@ -1,48 +1,61 @@
+<!--
+ * @Descripttion: svg组件
+ * @version: 
+ * @Author: Calvin
+ * @Date: 2021-12-02 20:34:23
+ * example:
+ <svg-icon
+    icon-class="icon-activity"
+    class-name="red-icon"
+  ></svg-icon>
+-->
 <template>
-  <svg
-    :class="svgClass"
-    v-bind="$attrs"
-    :style="{ color: color }"
-  >
+  <svg :class="svgClass" aria-hidden="true">
     <use :xlink:href="iconName" />
   </svg>
 </template>
 
 <script>
-//https://juejin.cn/post/6932037172178616334
 import { computed } from 'vue'
 export default {
-  name: 'SvgIcon',
   props: {
-    name: {
+    iconClass: {
       type: String,
       required: true
     },
-    color: {
+    className: {
       type: String,
       default: ''
     }
   },
   setup(props) {
-    const iconName = computed(() => `#icon-${props.name}`)
-    const svgClass = computed(() => {
-      if (props.name) {
-        return `svg-icon icon-${props.name}`
-      }
-      return 'svg-icon'
-    })
     return {
-      iconName,
-      svgClass
+      iconName: computed(() => `#icon-${props.iconClass}`),
+      svgClass: computed(() => {
+        if (props.className) {
+          return `svg-icon ${props.className}`
+        }
+        return 'svg-icon'
+      })
     }
   }
 }
 </script>
-<style lang="scss" scoped>
+
+<style scope lang="scss">
+.sub-el-icon,
+.nav-icon {
+  position: relative;
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 15px;
+}
+
 .svg-icon {
+  position: relative;
   width: 1em;
   height: 1em;
   fill: currentColor;
-  vertical-align: middle;
+  vertical-align: -2px;
 }
 </style>

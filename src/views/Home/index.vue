@@ -9,4 +9,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.red-icon {
+  width: 2rem;
+  height: 2rem;
+  color: red;
+}
+</style>
