@@ -1,4 +1,4 @@
-# 0.0.0 (2021-12-02)
+# 0.0.0 (2021-12-03)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -14,6 +14,7 @@
  - | 引入vuex | [d1c7f72](https://github.com/Calvin66/viti-vue3-admin/commit/d1c7f72)
  - | Easy Mock | [6446a70](https://github.com/Calvin66/viti-vue3-admin/commit/6446a70)
  - | eslint 引入文件排序 | [670d248](https://github.com/Calvin66/viti-vue3-admin/commit/670d248)
+ - | layout布局 | [45169e7](https://github.com/Calvin66/viti-vue3-admin/commit/45169e7)
  - | prettier配置修改 | [999e962](https://github.com/Calvin66/viti-vue3-admin/commit/999e962)
 
 

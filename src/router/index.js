@@ -3,31 +3,30 @@ import {
   createWebHashHistory
 } from 'vue-router'
 
+import Layout from '@/layout/index.vue'
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
-      path: '/',
+      path: '',
       name: 'home',
-      component: () =>
-        import(
-          /* webpackChunkName: "home" */ '../views/Home/index.vue'
-        )
-    },
-    {
-      path: '/layout',
-      name: 'home',
-      component: () =>
-        import(
-          /* webpackChunkName: "home" */ '@/layout/index.vue'
-        )
+      component: Layout,
+      redirect: '/home',
+      children: [
+        {
+          path: 'home',
+          component: () => import('@/views/Home/index.vue'),
+          name: 'home',
+          meta: { title: '首页', icon: 'dashboard' }
+        }
+      ]
     },
     {
       path: '/login',
       name: 'login',
       component: () =>
         import(
-          /* webpackChunkName: "login" */ '../views/Login/index.vue'
+          /* webpackChunkName: "login" */ '@/views/Login/index.vue'
         )
     }
   ]

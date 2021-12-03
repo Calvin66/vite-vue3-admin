@@ -1,6 +1,10 @@
 <template>
   <div class="app-main-container">
-    <div v-for="i in 100" :key="i">测试</div>
+    <router-view v-slot="{ Component, route }">
+      <transition name="fade-transform" mode="out-in">
+        <component :is="Component" :key="route.path" />
+      </transition>
+    </router-view>
   </div>
 </template>
 

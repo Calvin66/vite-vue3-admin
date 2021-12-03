@@ -32,5 +32,6 @@ module.exports = {
     "simple-import-sort/imports": 1, // imports文件排序
     "simple-import-sort/exports": 1,// exports文件排序
     "prettier/prettier": ["warn", {"singleQuote": true}],
+    "vue/no-unused-components":1,
   }
 }

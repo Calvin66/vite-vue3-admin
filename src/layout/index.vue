@@ -41,7 +41,7 @@ export default {
     height: 100%;
     font-size: 0;
     background-color: red;
-    transition: width .28s;
+    transition: width 0.28s;
   }
 
   .main-container {
@@ -49,7 +49,7 @@ export default {
     margin-left: 210px;
     min-height: 100%;
     background: yellow;
-    transition: margin-left .28s;
+    transition: margin-left 0.28s;
   }
 }
 </style>
