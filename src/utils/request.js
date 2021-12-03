@@ -31,11 +31,7 @@ const LoadingInstance = {
  *
  *
  */
-function request(
-  axiosConfig,
-  customOptions,
-  loadingOptions
-) {
+function request(axiosConfig, customOptions, loadingOptions) {
   const service = axios.create({
     baseURL: '', // 设置统一的请求前缀
     timeout: 10000 // 设置统一的超时时长
@@ -62,14 +58,12 @@ function request(
   service.interceptors.request.use(
     (config) => {
       removePending(config)
-      custom_options.repeat_request_cancel &&
-        addPending(config)
+      custom_options.repeat_request_cancel && addPending(config)
       // 创建loading实例
       if (custom_options.loading) {
         LoadingInstance._count++
         if (LoadingInstance._count === 1) {
-          LoadingInstance._target =
-            ElLoading.service(loadingOpts)
+          LoadingInstance._target = ElLoading.service(loadingOpts)
         }
       }
       // 自动携带token
@@ -91,11 +85,7 @@ function request(
       removePending(response.config)
       custom_options.loading && closeLoading(custom_options) // 关闭loading
 
-      if (
-        custom_options.code_message_show &&
-        data &&
-        !data.isSuccess
-      ) {
+      if (custom_options.code_message_show && data && !data.isSuccess) {
         ElMessage({
           type: 'error',
           message: data.message
@@ -110,8 +100,7 @@ function request(
     (error) => {
       error.config && removePending(error.config)
       custom_options.loading && closeLoading(custom_options) // 关闭loading
-      custom_options.error_message_show &&
-        httpErrorStatusHandle(error) // 处理错误状态码
+      custom_options.error_message_show && httpErrorStatusHandle(error) // 处理错误状态码
       return Promise.reject(error) // 错误继续返回给到具体页面
     }
   )
@@ -176,12 +165,9 @@ function httpErrorStatusHandle(error) {
         break
     }
   }
-  if (error.message.includes('timeout'))
-    message = '网络请求超时！'
+  if (error.message.includes('timeout')) message = '网络请求超时！'
   if (error.message.includes('Network'))
-    message = window.navigator.onLine
-      ? '服务端异常！'
-      : '您断网了！'
+    message = window.navigator.onLine ? '服务端异常！' : '您断网了！'
 
   ElMessage({
     type: 'error',
@@ -194,8 +180,7 @@ function httpErrorStatusHandle(error) {
  * @param {*} _options
  */
 function closeLoading(_options) {
-  if (_options.loading && LoadingInstance._count > 0)
-    LoadingInstance._count--
+  if (_options.loading && LoadingInstance._count > 0) LoadingInstance._count--
   if (LoadingInstance._count === 0) {
     LoadingInstance._target.close()
     LoadingInstance._target = null
@@ -240,10 +225,5 @@ function removePending(config) {
 function getPendingKey(config) {
   let { url, method, params, data } = config
   if (typeof data === 'string') data = JSON.parse(data) // response里面返回的config.data是个字符串对象
-  return [
-    url,
-    method,
-    JSON.stringify(params),
-    JSON.stringify(data)
-  ].join('&')
+  return [url, method, JSON.stringify(params), JSON.stringify(data)].join('&')
 }

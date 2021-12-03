@@ -2,17 +2,13 @@
   <div class="login-container">
     <div class="login-form">
       <div class="login-title">后台管理系统</div>
-      <el-form
-        ref="loginFormRef"
-        :model="loginForm"
-        :rules="loginRules"
-      >
+      <el-form ref="loginFormRef" :model="loginForm" :rules="loginRules">
         <el-form-item prop="username">
           <el-input
             v-model.trim="loginForm.username"
             placeholder="请输入用户名"
             autocomplete="off"
-          ></el-input>
+          />
         </el-form-item>
         <el-form-item prop="password">
           <el-input
@@ -20,18 +16,16 @@
             placeholder="请输入密码"
             autocomplete="off"
             show-password
-          ></el-input>
+          />
         </el-form-item>
       </el-form>
       <div class="login-btn">
-        <el-button type="primary" @click="submitForm">
-          登录
-        </el-button>
+        <el-button type="primary" @click="submitForm">登录</el-button>
       </div>
-      <span class="icon icon-l-t"></span>
-      <span class="icon icon-r-t"></span>
-      <span class="icon icon-l-b"></span>
-      <span class="icon icon-r-b"></span>
+      <span class="icon icon-l-t" />
+      <span class="icon icon-r-t" />
+      <span class="icon icon-l-b" />
+      <span class="icon icon-r-b" />
     </div>
   </div>
 </template>

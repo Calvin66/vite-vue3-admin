@@ -2,9 +2,11 @@
 module.exports = {
   root: true,
   env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
     node: true
   },
-  parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
@@ -13,8 +15,9 @@ module.exports = {
     }
   },
   extends: [
-    'plugin:vue/vue3-recommended',
-    'plugin:prettier/recommended'
+    'plugin:vue/vue3-essential',
+    'eslint:recommended',
+    '@vue/prettier',
   ],
   plugins: ["simple-import-sort"],
   parserOptions: {

@@ -1,7 +1,4 @@
-import {
-  createRouter,
-  createWebHashHistory
-} from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 import Layout from '@/layout/index.vue'
 const router = createRouter({
@@ -25,9 +22,7 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () =>
-        import(
-          /* webpackChunkName: "login" */ '@/views/Login/index.vue'
-        )
+        import(/* webpackChunkName: "login" */ '@/views/Login/index.vue')
     }
   ]
 })

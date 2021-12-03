@@ -15,6 +15,7 @@
  - | Easy Mock | [6446a70](https://github.com/Calvin66/viti-vue3-admin/commit/6446a70)
  - | eslint 引入文件排序 | [670d248](https://github.com/Calvin66/viti-vue3-admin/commit/670d248)
  - | layout布局 | [45169e7](https://github.com/Calvin66/viti-vue3-admin/commit/45169e7)
+ - | layout路由 | [ec3459f](https://github.com/Calvin66/viti-vue3-admin/commit/ec3459f)
  - | prettier配置修改 | [999e962](https://github.com/Calvin66/viti-vue3-admin/commit/999e962)
 
 
