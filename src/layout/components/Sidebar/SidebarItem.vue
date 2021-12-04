@@ -12,25 +12,13 @@
           :index="resolvePath(onlyOneChild.path)"
           :class="{ 'submenu-title-noDropdown': !isNest }"
         >
-          <template v-if="onlyOneChild.meta?.icon || item.meta?.icon">
-            <svg-icon
-              :icon-class="onlyOneChild.meta.icon || item.meta.icon"
-              className="nav-icon"
-            />
-          </template>
-          <template #title>{{ onlyOneChild.meta?.title }}</template>
+          <Item :meta="onlyOneChild.meta || item.meta" />
         </el-menu-item>
       </Link>
     </template>
     <el-sub-menu v-else :index="resolvePath(item.path)" popper-append-to-body>
-      <template v-slot:title>
-        <template v-if="onlyOneChild.meta?.icon || item.meta?.icon">
-          <svg-icon
-            :icon-class="onlyOneChild.meta.icon || item.meta.icon"
-            className="nav-icon"
-          />
-        </template>
-        <span>{{ item.meta.title }}</span>
+      <template #title v-if="item.meta">
+        <Item :meta="item.meta" />
       </template>
       <sidebar-item
         v-for="child in item.children"
@@ -52,24 +40,23 @@ import { getCurrentInstance } from 'vue'
 
 import { isExternal } from '@/utils/validate'
 
+import Item from './Item.vue'
 import Link from './Link.vue'
 export default {
   name: 'SidebarItem',
   components: {
+    Item,
     Link
   },
   props: {
-    //每一个router Item
     item: {
       type: Object,
       required: true
     },
-    //用于判断是不是子Item,设置响应的样式
     isNest: {
       type: Boolean,
       default: false
     },
-    //基础路径，用于拼接
     basePath: {
       type: String,
       default: ''
@@ -77,14 +64,12 @@ export default {
   },
   setup(props) {
     let { proxy } = getCurrentInstance()
-    //显示sidebarItem 的情况
     proxy.onlyOneChild = null
     let hasOneShowingChild = (children = [], parent) => {
       const showingChildren = children.filter((item) => {
         if (item.hidden) {
           return false
         } else {
-          // Temp set(will be used if only has one showing child)
           proxy.onlyOneChild = item
           return true
         }

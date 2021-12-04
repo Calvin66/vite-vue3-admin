@@ -29,7 +29,6 @@ export default {
     }
   },
   setup(props) {
-    console.log(props, '打印111')
     return {
       iconName: computed(() => `#icon-${props.iconClass}`),
       svgClass: computed(() => {
@@ -44,8 +43,7 @@ export default {
 </script>
 
 <style scope lang="scss">
-.sub-el-icon,
-.nav-icon {
+.sub-el-icon {
   position: relative;
   display: inline-block;
   margin-right: 12px;
