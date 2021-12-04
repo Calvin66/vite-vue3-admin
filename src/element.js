@@ -9,7 +9,9 @@ import {
   ElForm,
   ElInput,
   ElLoading,
+  ElMenu,
   ElMessage,
+  ElSubMenu,
   ElTable
 } from 'element-plus'
 
@@ -25,5 +27,7 @@ export const elcomponents = [
   ElBacktop,
   ElBadge,
   ElLoading,
-  ElMessage
+  ElMessage,
+  ElMenu,
+  ElSubMenu
 ]
