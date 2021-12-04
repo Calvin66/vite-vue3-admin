@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-container">
+  <div class="layout-container" :class="{ collapse: !isCollapse }">
     <Sidebar class="sidebar-container" />
     <div class="main-container">
       <Navbar />
@@ -9,6 +9,9 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+
 import AppMain from './components/AppMain.vue'
 import Navbar from './components/Navbar/index.vue'
 import Sidebar from './components/Sidebar/index.vue'
@@ -19,7 +22,13 @@ export default {
     AppMain,
     Navbar
   },
-  setup() {}
+  setup() {
+    const store = useStore()
+    const isCollapse = computed(() => store.state.app.isCollapse)
+    return {
+      isCollapse
+    }
+  }
 }
 </script>
 
@@ -41,7 +50,7 @@ export default {
     height: 100%;
     font-size: 0;
     background-color: red;
-    transition: width 0.28s;
+    transition: width .28s;
   }
 
   .main-container {
@@ -49,7 +58,17 @@ export default {
     margin-left: 210px;
     min-height: 100%;
     background: yellow;
-    transition: margin-left 0.28s;
+    transition: margin-left .28s;
+  }
+
+  &.collapse {
+    .sidebar-container {
+      width: 54px !important;
+    }
+
+    .main-container {
+      margin-left: 54px;
+    }
   }
 }
 </style>

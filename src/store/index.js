@@ -1,5 +1,6 @@
 import { createLogger, createStore } from 'vuex'
 
+import app from './modules/app'
 import user from './modules/user'
 // const modulesFiles = require.context(
 //   './modules',
@@ -22,6 +23,7 @@ const debug = process.env.NODE_ENV !== 'production'
 
 export default createStore({
   modules: {
+    app,
     user
   },
   strict: debug,

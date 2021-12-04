@@ -3,6 +3,7 @@
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         :default-active="activeMenu"
+        :collapse="!isCollapse"
         background-color="#304156"
         text-color="#bfcbd9"
         :unique-opened="false"
@@ -24,16 +25,18 @@
 <script>
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 
-import SidebarItem from './SidebarItem.vue'
+import SidebarItem from './components/SidebarItem.vue'
 export default {
   name: 'Sidebar',
   components: { SidebarItem },
   setup() {
+    const store = useStore()
+    const isCollapse = computed(() => store.state.app.isCollapse)
     const route = useRoute()
     const activeMenu = computed(() => {
       const { meta, fullPath } = route
-      // if set path, the sidebar will highlight the path you set
       if (meta.activeMenu) {
         return meta.activeMenu
       }
@@ -43,9 +46,11 @@ export default {
     const permissionRoutes = computed(() => {
       return router.options.routes
     })
+
     return {
       activeMenu,
-      permissionRoutes
+      permissionRoutes,
+      isCollapse
     }
   }
 }

@@ -5,6 +5,7 @@
 --|--|--
  - | 按需引入element-plus | [d3f39dc](https://github.com/Calvin66/vite-vue3-admin/commit/d3f39dc)
  - | 侧边栏配置 | [1ed75f3](https://github.com/Calvin66/vite-vue3-admin/commit/1ed75f3)
+ - | 侧边栏icon显示 | [3bd40e4](https://github.com/Calvin66/vite-vue3-admin/commit/3bd40e4)
  - | 配置路由、新增登录页 | [fdf4948](https://github.com/Calvin66/vite-vue3-admin/commit/fdf4948)
  - | 全局注册svg-icon组件 | [7ef6255](https://github.com/Calvin66/vite-vue3-admin/commit/7ef6255)
  - | 添加commitlint | [2ee4c8a](https://github.com/Calvin66/vite-vue3-admin/commit/2ee4c8a)

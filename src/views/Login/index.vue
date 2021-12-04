@@ -63,7 +63,6 @@ export default {
     }
     const loginFormRef = ref(null)
     const store = useStore()
-    console.log(store.state.user)
     const submitForm = () => {
       loginFormRef.value.validate((valid) => {
         if (valid) {
