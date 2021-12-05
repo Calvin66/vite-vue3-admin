@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-container">
+  <div class="sidebar-menu-container">
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         :default-active="activeMenu"
@@ -56,12 +56,30 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.sidebar-container {
+<style lang="scss">
+.sidebar-menu-container {
   .el-menu {
     border: none;
-    height: 100%;
     width: 100% !important;
+    height: 100%;
+  }
+  //el-menu折叠时，导航文字不隐藏问题
+  .el-menu--collapse {
+    .el-sub-menu {
+      & > .el-sub-menu__title {
+        & > span {
+          display: inline-block;
+          overflow: hidden;
+          width: 0;
+          height: 0;
+          visibility: hidden;
+        }
+      }
+
+      .el-sub-menu__icon-arrow {
+        display: none;
+      }
+    }
   }
 }
 </style>

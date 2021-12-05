@@ -50,14 +50,14 @@ export default {
     height: 100%;
     font-size: 0;
     background-color: #304156;
-    transition: width 0.28s;
+    transition: width .28s;
   }
 
   .main-container {
     position: relative;
     margin-left: 210px;
     min-height: 100%;
-    transition: margin-left 0.28s;
+    transition: margin-left .28s;
   }
 
   &.collapse {
@@ -66,7 +66,7 @@ export default {
     }
 
     .main-container {
-      margin-left: 54px;
+      margin-left: 54px !important;
     }
   }
 }

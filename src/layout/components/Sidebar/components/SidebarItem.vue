@@ -24,13 +24,12 @@
         <Item :meta="item.meta" />
         <span v-if="item.meta.title">{{ item.meta.title }}</span>
       </template>
-      <sidebar-item
+      <SidebarItem
         v-for="child in item.children"
         :key="child.path"
         :is-nest="true"
         :item="child"
         :base-path="resolvePath(child.path)"
-        class="nest-menu"
       />
     </el-sub-menu>
   </div>

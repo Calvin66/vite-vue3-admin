@@ -43,13 +43,6 @@ export default {
 </script>
 
 <style scope lang="scss">
-.sub-el-icon {
-  position: relative;
-  display: inline-block;
-  margin-right: 12px;
-  font-size: 15px;
-}
-
 .svg-icon {
   position: relative;
   width: 1em;

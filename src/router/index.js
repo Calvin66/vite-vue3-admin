@@ -8,7 +8,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
  *alwaysShow：true:               如果设置为true，将始终显示根菜单
  *meta: {
  * title: 'title';                设置该路由在侧边栏和面包屑中展示的名字
- * elSvgIcon: 'svg-name';         使用自定义svg图标
+ * svgIcon: 'svg-name';         使用自定义svg图标
  * icon: 'el-svg-name';           使用ele自带svg图标
  * breadcrumb: false              如果设置为false，则不会在breadcrumb面包屑中显示,
  * activeMenu: '/example/list'    如果设置了路径，侧边栏将突出显示您设置的路径
@@ -28,7 +28,7 @@ const router = createRouter({
           path: 'home',
           component: () => import('@/views/Home/index.vue'),
           name: 'home',
-          meta: { title: '首页', elSvgIcon: 'icon-activity' }
+          meta: { title: '首页', svgIcon: 'icon-activity' }
         }
       ]
     },
@@ -39,14 +39,14 @@ const router = createRouter({
       name: 'Demo',
       meta: {
         title: '测试',
-        icon: 'Calendar'
+        icon: 'Apple'
       },
       children: [
         {
           path: 'index',
           component: () => import('@/views/Demo.vue'), // Parent router-view
           name: 'DemoIndex',
-          meta: { title: '测试页面', icon: 'Calendar' }
+          meta: { title: '测试页面', icon: 'Apple' }
         }
       ]
     },
