@@ -13,12 +13,16 @@
           :class="{ 'submenu-title-noDropdown': !isNest }"
         >
           <Item :meta="onlyOneChild.meta || item.meta" />
+          <template v-if="onlyOneChild.meta.title" #title>
+            {{ onlyOneChild.meta.title }}
+          </template>
         </el-menu-item>
       </Link>
     </template>
     <el-sub-menu v-else :index="resolvePath(item.path)" popper-append-to-body>
       <template #title v-if="item.meta">
         <Item :meta="item.meta" />
+        <span v-if="item.meta.title">{{ item.meta.title }}</span>
       </template>
       <sidebar-item
         v-for="child in item.children"

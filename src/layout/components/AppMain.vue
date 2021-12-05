@@ -21,7 +21,6 @@ export default {
   overflow-y: auto;
   width: 100%;
   height: calc(100vh - 50px);
-  background: blue;
   box-sizing: border-box;
 }
 </style>

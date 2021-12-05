@@ -8,8 +8,8 @@ import { createRouter, createWebHashHistory } from 'vue-router'
  *alwaysShow：true:               如果设置为true，将始终显示根菜单
  *meta: {
  * title: 'title';                设置该路由在侧边栏和面包屑中展示的名字
- * elSvgIcon: 'svg-name';         设置该路由的图标
- * icon: 'svg-name';              设置该路由的图标
+ * elSvgIcon: 'svg-name';         使用自定义svg图标
+ * icon: 'el-svg-name';           使用ele自带svg图标
  * breadcrumb: false              如果设置为false，则不会在breadcrumb面包屑中显示,
  * activeMenu: '/example/list'    如果设置了路径，侧边栏将突出显示您设置的路径
  * }
@@ -28,7 +28,7 @@ const router = createRouter({
           path: 'home',
           component: () => import('@/views/Home/index.vue'),
           name: 'home',
-          meta: { title: '首页', icon: 'icon-activity' }
+          meta: { title: '首页', elSvgIcon: 'icon-activity' }
         }
       ]
     },
@@ -39,14 +39,14 @@ const router = createRouter({
       name: 'Demo',
       meta: {
         title: '测试',
-        icon: 'icon-activity'
+        icon: 'Calendar'
       },
       children: [
         {
           path: 'index',
           component: () => import('@/views/Demo.vue'), // Parent router-view
           name: 'DemoIndex',
-          meta: { title: '测试页面', icon: 'icon-activity' }
+          meta: { title: '测试页面', icon: 'Calendar' }
         }
       ]
     },
@@ -57,20 +57,20 @@ const router = createRouter({
       name: 'Menu',
       meta: {
         title: 'Menu',
-        icon: 'icon-activity'
+        icon: 'Calendar'
       },
       children: [
         {
           path: 'menu1',
           component: () => import('@/views/Menu/Menu1/index.vue'), // Parent router-view
           name: 'Menu1',
-          meta: { title: 'Menu1', icon: 'icon-activity' }
+          meta: { title: 'Menu1', icon: 'Calendar' }
         },
         {
           path: 'menu2',
           component: () => import('@/views/Menu/Menu2/index.vue'), // Parent router-view
           name: 'Menu2',
-          meta: { title: 'Menu2', icon: 'icon-activity' }
+          meta: { title: 'Menu2', icon: 'Calendar' }
         }
       ]
     },

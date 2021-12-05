@@ -49,16 +49,15 @@ export default {
     width: 210px !important;
     height: 100%;
     font-size: 0;
-    background-color: red;
-    transition: width .28s;
+    background-color: #304156;
+    transition: width 0.28s;
   }
 
   .main-container {
     position: relative;
     margin-left: 210px;
     min-height: 100%;
-    background: yellow;
-    transition: margin-left .28s;
+    transition: margin-left 0.28s;
   }
 
   &.collapse {

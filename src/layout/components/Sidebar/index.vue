@@ -56,4 +56,12 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.sidebar-container {
+  .el-menu {
+    border: none;
+    height: 100%;
+    width: 100% !important;
+  }
+}
+</style>
