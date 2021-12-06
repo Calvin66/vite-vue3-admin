@@ -33,6 +33,7 @@
 <script>
 import { ElMessage } from 'element-plus'
 import { reactive, ref, toRefs } from 'vue'
+import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 
 import { login } from '@/api/user'
@@ -63,6 +64,7 @@ export default {
     }
     const loginFormRef = ref(null)
     const store = useStore()
+    const router = useRouter()
     const submitForm = () => {
       loginFormRef.value.validate((valid) => {
         if (valid) {
@@ -77,6 +79,7 @@ export default {
               token
             })
             ElMessage.success(res.message)
+            router.push({ path: '/' })
           })
         } else {
           return false
