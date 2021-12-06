@@ -37,11 +37,10 @@ export default {
               (item) => item.path === '/'
             )
             // 初始化children路由
-            const children = []
+            const children = MainContainer.children
             children.push(...routes)
-            console.log(children, '打印children')
             commit('setMenu', children)
-            MainContainer.children = children
+            console.log(children, '打印children')
             setDefaultRoute([MainContainer])
             // Vue Router 4.x已经弃用 addRoutes
             // staticRouters.forEach((route) => {

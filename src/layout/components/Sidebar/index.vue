@@ -18,7 +18,7 @@
         mode="vertical"
       >
         <sidebar-item
-          v-for="route in permissionList"
+          v-for="route in sidebarMenu"
           :key="route.path"
           :item="route"
           :base-path="route.path"
@@ -48,13 +48,13 @@ export default {
       }
       return fullPath
     })
-    const permissionList = computed(() => {
-      return store.state.permission.permissionList
+    const sidebarMenu = computed(() => {
+      return store.state.permission.sidebarMenu
     })
-    console.log(permissionList.value, '打印permissionList')
+    console.log(sidebarMenu, '打印permissionList')
     return {
       activeMenu,
-      permissionList,
+      sidebarMenu,
       isCollapse
     }
   }

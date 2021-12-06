@@ -8,6 +8,7 @@
  - | 侧边栏图标 | [0e8974d](https://github.com/Calvin66/vite-vue3-admin/commit/0e8974d)
  - | 侧边栏icon显示 | [3bd40e4](https://github.com/Calvin66/vite-vue3-admin/commit/3bd40e4)
  - | 动态路由 | [92aeb57](https://github.com/Calvin66/vite-vue3-admin/commit/92aeb57)
+ - | 动态路由（未完成） | [2c7fa62](https://github.com/Calvin66/vite-vue3-admin/commit/2c7fa62)
  - | 配置路由、新增登录页 | [fdf4948](https://github.com/Calvin66/vite-vue3-admin/commit/fdf4948)
  - | 全局注册svg-icon组件 | [7ef6255](https://github.com/Calvin66/vite-vue3-admin/commit/7ef6255)
  - | 添加commitlint | [2ee4c8a](https://github.com/Calvin66/vite-vue3-admin/commit/2ee4c8a)

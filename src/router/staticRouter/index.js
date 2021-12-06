@@ -26,12 +26,12 @@ export const staticRoutes = [
     component: Layout,
     redirect: '/home',
     children: [
-      // {
-      //   path: '/home',
-      //   component: () => import('@/views/Home/index.vue'),
-      //   name: 'home',
-      //   meta: { title: '首页', svgIcon: 'icon-activity' }
-      // }
+      {
+        path: '/home',
+        component: () => import('@/views/Home/index.vue'),
+        name: 'home',
+        meta: { title: '首页', svgIcon: 'icon-activity' }
+      }
     ]
   }
 ]

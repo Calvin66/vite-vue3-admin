@@ -21,6 +21,12 @@
  */
 
 export const dynamicRoutes = [
+  // {
+  //   path: '/home',
+  //   component: () => import('@/views/Home/index.vue'),
+  //   name: 'home',
+  //   meta: { title: '首页', svgIcon: 'icon-activity' }
+  // },
   {
     path: '/systemManage',
     component: () => import('@/views/SystemManage/index.vue'),
