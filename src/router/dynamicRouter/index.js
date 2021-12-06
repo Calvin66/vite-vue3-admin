@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 11:04:28
- * @FilePath: \src\router\dynamicRouter\index.js
+ * @FilePath: /src/router/dynamicRouter/index.js
  * @Description:动态路由(需要根据后端返回用户权限菜单动态匹配)
  */
 
@@ -19,14 +19,8 @@
  * activeMenu: '/example/list'    如果设置了路径，侧边栏将突出显示您设置的路径
  * }
  */
-import Redirect from '@/components/Redirect/index.vue'
-export const dynamicRouter = [
-  {
-    path: '/home',
-    component: () => import('@/views/Home/index.vue'),
-    name: 'home',
-    meta: { title: '首页', svgIcon: 'icon-activity' }
-  },
+
+export const dynamicRoutes = [
   {
     path: '/systemManage',
     component: () => import('@/views/SystemManage/index.vue'),

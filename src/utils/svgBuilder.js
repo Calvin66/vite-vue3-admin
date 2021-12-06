@@ -1,3 +1,9 @@
+/*
+ * @Author: Calvin
+ * @Date: 2021-12-03 22:15:33
+ * @FilePath: /src/utils/svgBuilder.js
+ * @Description:
+ */
 import { readdirSync, readFileSync } from 'fs'
 
 let idPerfix = ''
@@ -21,8 +27,6 @@ function findSvgFile(dir) {
         .toString()
         .replace(clearReturn, '')
         .replace(svgTitle, ($1, $2) => {
-          // console.log(++i)
-          // console.log(dirent.name)
           let width = 0
           let height = 0
           let content = $2.replace(clearHeightWidth, (s1, s2, s3) => {
@@ -52,8 +56,6 @@ export const svgBuilder = (path, perfix = 'icon') => {
   if (path === '') return
   idPerfix = perfix
   const res = findSvgFile(path)
-  // console.log(res.length)
-  // const res = []
   return {
     name: 'svg-transform',
     transformIndexHtml(html) {

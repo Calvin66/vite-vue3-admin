@@ -1,4 +1,11 @@
+/*
+ * @Author: Calvin
+ * @Date: 2021-12-05 22:09:20
+ * @FilePath: /src/main.js
+ * @Description:
+ */
 import 'element-plus/dist/index.css'
+import './permission' // 权限菜单控制
 
 import { createApp } from 'vue'
 

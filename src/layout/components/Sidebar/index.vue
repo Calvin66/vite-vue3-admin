@@ -1,3 +1,9 @@
+<!--
+ * @Author: Calvin
+ * @Date: 2021-12-05 23:52:14
+ * @FilePath: /src/layout/components/Sidebar/index.vue
+ * @Description: 侧边栏组件
+-->
 <template>
   <div class="sidebar-menu-container">
     <el-scrollbar wrap-class="scrollbar-wrapper">
@@ -12,7 +18,7 @@
         mode="vertical"
       >
         <sidebar-item
-          v-for="route in permissionRoutes"
+          v-for="route in permissionList"
           :key="route.path"
           :item="route"
           :base-path="route.path"
@@ -24,7 +30,7 @@
 
 <script>
 import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
 
 import SidebarItem from './components/SidebarItem.vue'
@@ -42,14 +48,13 @@ export default {
       }
       return fullPath
     })
-    const router = useRouter()
-    const permissionRoutes = computed(() => {
-      return router.options.routes
+    const permissionList = computed(() => {
+      return store.state.permission.permissionList
     })
-
+    console.log(permissionList.value, '打印permissionList')
     return {
       activeMenu,
-      permissionRoutes,
+      permissionList,
       isCollapse
     }
   }

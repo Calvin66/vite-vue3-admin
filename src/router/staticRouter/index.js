@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 11:05:26
- * @FilePath: \src\router\staticRouter\index.js
+ * @FilePath: /src/router/staticRouter/index.js
  * @Description:静态路由(不需要根据后端权限控制的路由)
  */
 
@@ -19,14 +19,19 @@
  * activeMenu: '/example/list'    如果设置了路径，侧边栏将突出显示您设置的路径
  * }
  */
-import Redirect from '@/components/Redirect/index.vue'
 import Layout from '@/layout/index.vue'
 export const staticRoutes = [
   {
     path: '/',
-    name: 'home',
     component: Layout,
     redirect: '/home',
-    children: []
+    children: [
+      // {
+      //   path: '/home',
+      //   component: () => import('@/views/Home/index.vue'),
+      //   name: 'home',
+      //   meta: { title: '首页', svgIcon: 'icon-activity' }
+      // }
+    ]
   }
 ]
