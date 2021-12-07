@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 11:05:26
- * @FilePath: /src/router/staticRouter/index.js
+ * @FilePath: \src\router\staticRouter\index.js
  * @Description:静态路由(不需要根据后端权限控制的路由)
  */
 

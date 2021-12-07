@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 20:17:20
- * @FilePath: /src/store/modules/permission.js
+ * @FilePath: \src\store\modules\permission.js
  * @Description:处理权限路由数据
  */
 
@@ -22,6 +22,7 @@ export default {
     },
     setPermissionList: (state, routes) => {
       state.permissionList = routes
+      console.log(state.permissionList, '打印state.permissionList')
     }
   },
   actions: {
@@ -40,7 +41,6 @@ export default {
             const children = MainContainer.children
             children.push(...routes)
             commit('setMenu', children)
-            console.log(children, '打印children')
             setDefaultRoute([MainContainer])
             // Vue Router 4.x已经弃用 addRoutes
             // staticRouters.forEach((route) => {
@@ -48,7 +48,7 @@ export default {
             // })
             router.addRoute(...staticRouters)
             commit('setPermissionList', [...staticRouters])
-            resolve()
+            resolve(true)
           })
           .catch((error) => {
             reject(error)
