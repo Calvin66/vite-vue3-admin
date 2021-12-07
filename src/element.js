@@ -1,3 +1,9 @@
+/*
+ * @Author: Calvin
+ * @Date: 2021-12-05 22:57:44
+ * @FilePath: /src/element.js
+ * @Description:element-plus组件按需注册列表
+ */
 import {
   ElAlert,
   ElAside,
@@ -5,6 +11,8 @@ import {
   ElAvatar,
   ElBacktop,
   ElBadge,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
   ElButton,
   ElForm,
   ElInput,
@@ -29,5 +37,7 @@ export const elcomponents = [
   ElLoading,
   ElMessage,
   ElMenu,
-  ElSubMenu
+  ElSubMenu,
+  ElBreadcrumb,
+  ElBreadcrumbItem
 ]

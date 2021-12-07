@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 11:04:28
- * @FilePath: \src\router\dynamicRouter\index.js
+ * @FilePath: /src/router/dynamicRouter/index.js
  * @Description:动态路由(需要根据后端返回用户权限菜单动态匹配)
  */
 

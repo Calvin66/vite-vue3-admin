@@ -17,6 +17,7 @@
     "axios": "^0.24.0",
     "element-plus": "^1.2.0-beta.4",
     "path-browserify": "^1.0.1",
+    "path-to-regexp": "^6.2.0",
     "unplugin-vue-components": "^0.17.2",
     "vue": "^3.2.16",
     "vue-router": "4",

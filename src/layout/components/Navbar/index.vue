@@ -1,15 +1,24 @@
+<!--
+ * @Author: Calvin
+ * @Date: 2021-12-06 19:57:10
+ * @FilePath: /src/layout/components/Navbar/index.vue
+ * @Description: 
+-->
 <template>
   <div class="navbar-container">
     <Collapse></Collapse>
+    <Breadcrumb></Breadcrumb>
   </div>
 </template>
 
 <script>
+import Breadcrumb from './components/Breadcrumb.vue'
 import Collapse from './components/Collapse.vue'
 export default {
   name: 'Navbar',
   components: {
-    Collapse
+    Collapse,
+    Breadcrumb
   },
   setup() {}
 }
