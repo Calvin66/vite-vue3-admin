@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 21:25:11
- * @FilePath: /src/utils/recurseRouter.js
+ * @FilePath: \src\utils\recurseRoutes.js
  * @Description:动态路由处理函数
  */
 
@@ -11,13 +11,13 @@
  * @param {Array} allRouter 前端配置好的所有动态路由的集合
  * @return {Array} realRoutes 过滤后的路由
  */
-export function recurseRouter(userRouter = [], allRouter = []) {
+export function recurseRoutes(userRouter = [], allRouter = []) {
   const realRoutes = []
   allRouter.forEach((allRoute) => {
     userRouter.forEach((userRoute) => {
       if (userRoute.path === allRoute.path) {
         if (userRoute.children && userRoute.children.length > 0) {
-          allRoute.children = recurseRouter(
+          allRoute.children = recurseRoutes(
             userRoute.children,
             allRoute.children
           )

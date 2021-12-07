@@ -32,6 +32,7 @@
  - | 全局引入ele样式，修复ElMessage显示问题 | [b88b8f6](https://github.com/Calvin66/viti-vue3-admin/commit/b88b8f6)
  - | 修复侧边栏菜单不展示问题 | [6557fbd](https://github.com/Calvin66/viti-vue3-admin/commit/6557fbd)
  - | 修复侧边栏折叠导航文字不隐藏问题 | [2e07942](https://github.com/Calvin66/viti-vue3-admin/commit/2e07942)
+ - | 修复动态路由跳转失败问题 | [c853c13](https://github.com/Calvin66/viti-vue3-admin/commit/c853c13)
  - | 修复eslint配置导致错误代码没有提示 | [7539434](https://github.com/Calvin66/viti-vue3-admin/commit/7539434)
  - | 修改svg组件 | [42e0535](https://github.com/Calvin66/viti-vue3-admin/commit/42e0535)
  - | eslint 重新配置 | [24affa6](https://github.com/Calvin66/viti-vue3-admin/commit/24affa6)

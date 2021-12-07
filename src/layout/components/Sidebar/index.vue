@@ -1,7 +1,7 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-05 23:52:14
- * @FilePath: /src/layout/components/Sidebar/index.vue
+ * @FilePath: \src\layout\components\Sidebar\index.vue
  * @Description: 侧边栏组件
 -->
 <template>
@@ -51,7 +51,6 @@ export default {
     const sidebarMenu = computed(() => {
       return store.state.permission.sidebarMenu
     })
-    console.log(sidebarMenu, '打印permissionList')
     return {
       activeMenu,
       sidebarMenu,

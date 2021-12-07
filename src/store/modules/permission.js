@@ -6,9 +6,11 @@
  */
 
 import { getPermissionMenus } from '@/api/permission'
-import router, { dynamicRouters, staticRouters } from '@/router/index'
+import { dynamicRoutes } from '@/router/dynamicRouter/index'
+import router from '@/router/index'
+import { staticRoutes } from '@/router/staticRouter/index'
 import store from '@/store'
-import { recurseRouter, setDefaultRoute } from '@/utils/recurseRouter'
+import { recurseRoutes, setDefaultRoute } from '@/utils/recurseRoutes'
 export default {
   namespaced: true,
   state: {
@@ -22,32 +24,36 @@ export default {
     },
     setPermissionList: (state, routes) => {
       state.permissionList = routes
-      console.log(state.permissionList, '打印state.permissionList')
     }
   },
   actions: {
-    // 获表
+    // 获取权限菜单
     getPermissionList({ commit }) {
+      // role 为方便mock请求，真实开发删除
       const role = store.state.user.role
       return new Promise((resolve, reject) => {
         getPermissionMenus(role)
           .then((res) => {
             const permissionList = res.list
-            const routes = recurseRouter(permissionList, dynamicRouters)
-            const MainContainer = staticRouters.find(
-              (item) => item.path === '/'
-            )
+            /* 根据权限刷选出我们设置好的路由并加入到 path='/' 的children */
+            const routes = recurseRoutes(permissionList, dynamicRoutes)
+            const MainContainer = staticRoutes.find((item) => item.path === '/')
             // 初始化children路由
             const children = MainContainer.children
+            // 将当前用户的权限路由添加到动态路由中
             children.push(...routes)
-            commit('setMenu', children)
+            //递归为所有子路由的路由设置第一个children.path为默认路由
             setDefaultRoute([MainContainer])
+            // 保存菜单
+            commit('setMenu', children)
+
             // Vue Router 4.x已经弃用 addRoutes
-            // staticRouters.forEach((route) => {
+            // staticRoutes.forEach((route) => {
             //   router.addRoute(route)
             // })
-            router.addRoute(...staticRouters)
-            commit('setPermissionList', [...staticRouters])
+            router.addRoute(...staticRoutes)
+            // 保存权限路由
+            commit('setPermissionList', [...staticRoutes])
             resolve(true)
           })
           .catch((error) => {

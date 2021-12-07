@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 11:04:28
- * @FilePath: /src/router/dynamicRouter/index.js
+ * @FilePath: \src\router\dynamicRouter\index.js
  * @Description:动态路由(需要根据后端返回用户权限菜单动态匹配)
  */
 
@@ -21,12 +21,12 @@
  */
 
 export const dynamicRoutes = [
-  // {
-  //   path: '/home',
-  //   component: () => import('@/views/Home/index.vue'),
-  //   name: 'home',
-  //   meta: { title: '首页', svgIcon: 'icon-activity' }
-  // },
+  {
+    path: '/home',
+    component: () => import('@/views/Home/index.vue'),
+    name: 'Home',
+    meta: { title: '首页', svgIcon: 'icon-activity' }
+  },
   {
     path: '/systemManage',
     component: () => import('@/views/SystemManage/index.vue'),

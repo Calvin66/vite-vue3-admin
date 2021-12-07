@@ -25,13 +25,6 @@ export const staticRoutes = [
     path: '/',
     component: Layout,
     redirect: '/home',
-    children: [
-      {
-        path: '/home',
-        component: () => import('@/views/Home/index.vue'),
-        name: 'home',
-        meta: { title: '首页', svgIcon: 'icon-activity' }
-      }
-    ]
+    children: []
   }
 ]

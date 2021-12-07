@@ -82,7 +82,7 @@ export default {
         return true
       }
       if (showingChildren.length === 0) {
-        state.onlyOneChild = { ...parent, path: '', noChildren: true }
+        state.onlyOneChild = { ...parent, path: '', noShowingChildren: true }
         return true
       }
       return false
