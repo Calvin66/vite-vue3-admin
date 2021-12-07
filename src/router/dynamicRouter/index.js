@@ -19,7 +19,7 @@
  * activeMenu: '/example/list'    如果设置了路径，侧边栏将突出显示您设置的路径
  * }
  */
-
+import Redirect from '@/components/Redirect/index.vue'
 export const dynamicRoutes = [
   {
     path: '/home',
@@ -44,5 +44,32 @@ export const dynamicRoutes = [
     component: () => import('@/views/UserManage/index.vue'),
     name: 'UserManage',
     meta: { title: '用户管理', svgIcon: 'icon-activity' }
+  },
+  {
+    path: '/menuManage',
+    component: Redirect,
+    name: 'MenuManage',
+    meta: { title: '菜单管理', svgIcon: 'icon-activity' },
+    children: [
+      {
+        path: 'menu1',
+        name: 'MenuManageMenu1',
+        component: () => import('@/views/MenuManage/Menu1/index.vue'),
+        meta: { title: '菜单1', svgIcon: 'icon-activity' }
+      },
+      {
+        path: 'menu2',
+        component: Redirect,
+        meta: { title: '次级菜单', svgIcon: 'icon-activity' },
+        children: [
+          {
+            path: 'menu1',
+            name: 'MenuManageMenu2Menu1',
+            component: () => import('@/views/MenuManage/Menu2/Menu1/index.vue'),
+            meta: { title: '菜单1', svgIcon: 'icon-activity' }
+          }
+        ]
+      }
+    ]
   }
 ]

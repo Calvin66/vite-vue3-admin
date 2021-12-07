@@ -29,6 +29,7 @@
 ### 🐛 Bug 修复
 范围|描述|commitId
 --|--|--
+ - | 动态路由配置完成 | [d6dfcd0](https://github.com/Calvin66/viti-vue3-admin/commit/d6dfcd0)
  - | 全局引入ele样式，修复ElMessage显示问题 | [b88b8f6](https://github.com/Calvin66/viti-vue3-admin/commit/b88b8f6)
  - | 修复侧边栏菜单不展示问题 | [6557fbd](https://github.com/Calvin66/viti-vue3-admin/commit/6557fbd)
  - | 修复侧边栏折叠导航文字不隐藏问题 | [2e07942](https://github.com/Calvin66/viti-vue3-admin/commit/2e07942)

@@ -37,6 +37,9 @@ export default {
             const permissionList = res.list
             /* 根据权限刷选出我们设置好的路由并加入到 path='/' 的children */
             const routes = recurseRoutes(permissionList, dynamicRoutes)
+
+            // 开放本地菜单权限
+            // const routes = dynamicRoutes
             const MainContainer = staticRoutes.find((item) => item.path === '/')
             // 初始化children路由
             const children = MainContainer.children
@@ -45,6 +48,7 @@ export default {
             //递归为所有子路由的路由设置第一个children.path为默认路由
             setDefaultRoute([MainContainer])
             // 保存菜单
+            console.log(children, '打印children')
             commit('setMenu', children)
 
             // Vue Router 4.x已经弃用 addRoutes

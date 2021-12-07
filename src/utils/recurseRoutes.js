@@ -38,7 +38,7 @@ export function recurseRoutes(userRouter = [], allRouter = []) {
 export function setDefaultRoute(routes = []) {
   routes.forEach((route) => {
     if (route.children && route.children.length > 0) {
-      route.redirect = { name: route.children[0].name }
+      route.redirect = { path: route.children[0].path }
       setDefaultRoute(route.children)
     }
   })

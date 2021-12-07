@@ -79,7 +79,6 @@ export default {
           visibility: hidden;
         }
       }
-
       .el-sub-menu__icon-arrow {
         display: none;
       }
