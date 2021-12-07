@@ -8,7 +8,12 @@
   <el-breadcrumb class="breadcrumb-container" separator="/">
     <transition-group name="breadcrumb">
       <el-breadcrumb-item v-for="(item, index) in levelList" :key="item.path">
-        <span v-if="index === levelList.length - 1" class="no-redirect">
+        <span
+          v-if="
+            item.redirect === 'noRedirect' || index === levelList.length - 1
+          "
+          class="no-redirect"
+        >
           {{ item.meta?.title }}
         </span>
         <a v-else @click.prevent="handleLink(item)">{{ item.meta.title }}</a>
@@ -68,17 +73,11 @@ export default {
 </script>
 //
 <style lang="scss">
-.breadcrumb-containe.el-breadcrumb {
-  // display: inline-block;
-  // font-size: 14px;
-  // line-height: 50px;
-  // margin-left: 8px;
-  &__inner {
-    padding: 0 10px;
-    font-size: 13px;
-    font-weight: normal;
-    letter-spacing: 1px;
-  }
+.breadcrumb-container.el-breadcrumb {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 13px;
+  line-height: 50px;
 
   .no-redirect {
     color: #97a8be;

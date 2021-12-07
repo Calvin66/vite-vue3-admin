@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 20:17:20
- * @FilePath: \src\store\modules\permission.js
+ * @FilePath: /src/store/modules/permission.js
  * @Description:处理权限路由数据
  */
 
@@ -48,7 +48,6 @@ export default {
             //递归为所有子路由的路由设置第一个children.path为默认路由
             setDefaultRoute([MainContainer])
             // 保存菜单
-            console.log(children, '打印children')
             commit('setMenu', children)
 
             // Vue Router 4.x已经弃用 addRoutes
@@ -64,6 +63,11 @@ export default {
             reject(error)
           })
       })
+    },
+    changeSidebarMenu({ commit, state }, index) {
+      let menu = state.sidebarMenu[index]
+      // commit('setMenu', menu)
+      console.log(menu, '打印storemenu')
     }
   }
 }

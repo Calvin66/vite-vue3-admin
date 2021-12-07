@@ -7,6 +7,7 @@
 <template>
   <div class="navbar-container">
     <Collapse></Collapse>
+    <MenuBar></MenuBar>
     <Breadcrumb></Breadcrumb>
   </div>
 </template>
@@ -14,11 +15,13 @@
 <script>
 import Breadcrumb from './components/Breadcrumb.vue'
 import Collapse from './components/Collapse.vue'
+import MenuBar from './components/MenuBar.vue'
 export default {
   name: 'Navbar',
   components: {
     Collapse,
-    Breadcrumb
+    Breadcrumb,
+    MenuBar
   },
   setup() {}
 }

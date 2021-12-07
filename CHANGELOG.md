@@ -13,6 +13,7 @@
  - | 全局注册svg-icon组件 | [7ef6255](https://github.com/Calvin66/vite-vue3-admin/commit/7ef6255)
  - | 添加commitlint | [2ee4c8a](https://github.com/Calvin66/vite-vue3-admin/commit/2ee4c8a)
  - | 添加git提交代码校验 | [a59be60](https://github.com/Calvin66/vite-vue3-admin/commit/a59be60)
+ - | 头部导航栏面包屑 | [11705dd](https://github.com/Calvin66/vite-vue3-admin/commit/11705dd)
  - | 完善侧边栏 | [332b99f](https://github.com/Calvin66/vite-vue3-admin/commit/332b99f)
  - | 新增侧边栏 | [53acaaf](https://github.com/Calvin66/vite-vue3-admin/commit/53acaaf)
  - | 新增axios | [212904d](https://github.com/Calvin66/vite-vue3-admin/commit/212904d)

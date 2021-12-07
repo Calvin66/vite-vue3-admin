@@ -37,9 +37,8 @@
 
 <script>
 //https://blog.csdn.net/qq_32063079/article/details/120769787
-
 import path from 'path-browserify'
-import { reactive, toRefs } from 'vue'
+import { getCurrentInstance } from 'vue'
 
 import { isExternal } from '@/utils/validate'
 
@@ -65,24 +64,23 @@ export default {
       default: ''
     }
   },
-  setup(props) {
-    const state = reactive({
-      onlyOneChild: null
-    })
+  setup() {
+    let { proxy } = getCurrentInstance()
+    proxy.onlyOneChild = null
     let hasOneShowingChild = (children = [], parent) => {
       const showingChildren = children.filter((item) => {
         if (item.hidden) {
           return false
         } else {
-          state.onlyOneChild = item
+          proxy.onlyOneChild = item
           return true
         }
       })
-      if (showingChildren.length === 1 && !parent?.alwaysShow) {
-        return true
-      }
+      // if (showingChildren.length === 1 && !parent?.alwaysShow) {
+      //   return true
+      // }
       if (showingChildren.length === 0) {
-        state.onlyOneChild = { ...parent, path: '', noShowingChildren: true }
+        proxy.onlyOneChild = { ...parent, path: '', noShowingChildren: true }
         return true
       }
       return false
@@ -91,13 +89,12 @@ export default {
       if (isExternal(routePath)) {
         return routePath
       }
-      if (isExternal(props.basePath)) {
-        return props.basePath
+      if (isExternal(proxy.basePath)) {
+        return proxy.basePath
       }
-      return path.join(props.basePath, routePath)
+      return path.resolve(proxy.basePath, routePath)
     }
     return {
-      ...toRefs(state),
       hasOneShowingChild,
       resolvePath
     }

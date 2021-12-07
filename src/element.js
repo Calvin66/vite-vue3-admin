@@ -18,26 +18,30 @@ import {
   ElInput,
   ElLoading,
   ElMenu,
+  ElMenuItem,
+  ElMenuItemGroup,
   ElMessage,
   ElSubMenu,
   ElTable
 } from 'element-plus'
 
 export const elcomponents = [
-  ElButton,
-  ElInput,
-  ElForm,
-  ElTable,
   ElAlert,
   ElAside,
   ElAutocomplete,
   ElAvatar,
   ElBacktop,
   ElBadge,
-  ElLoading,
-  ElMessage,
-  ElMenu,
-  ElSubMenu,
   ElBreadcrumb,
-  ElBreadcrumbItem
+  ElBreadcrumbItem,
+  ElButton,
+  ElForm,
+  ElInput,
+  ElLoading,
+  ElMenu,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElMessage,
+  ElSubMenu,
+  ElTable
 ]

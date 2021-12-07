@@ -19,6 +19,11 @@
  * activeMenu: '/example/list'    如果设置了路径，侧边栏将突出显示您设置的路径
  * }
  */
+
+/**
+ * fixBug
+ * children => path需要写全，不然Breadcrumb面包屑点击父级菜单不跳转
+ */
 import Redirect from '@/components/Redirect/index.vue'
 export const dynamicRoutes = [
   {
@@ -52,18 +57,18 @@ export const dynamicRoutes = [
     meta: { title: '菜单管理', svgIcon: 'icon-activity' },
     children: [
       {
-        path: 'menu1',
+        path: '/menuManage/menu1',
         name: 'MenuManageMenu1',
         component: () => import('@/views/MenuManage/Menu1/index.vue'),
         meta: { title: '菜单1', svgIcon: 'icon-activity' }
       },
       {
-        path: 'menu2',
+        path: '/menuManage/menu2',
         component: Redirect,
         meta: { title: '次级菜单', svgIcon: 'icon-activity' },
         children: [
           {
-            path: 'menu1',
+            path: '/menuManage/menu2/menu1',
             name: 'MenuManageMenu2Menu1',
             component: () => import('@/views/MenuManage/Menu2/Menu1/index.vue'),
             meta: { title: '菜单1', svgIcon: 'icon-activity' }
