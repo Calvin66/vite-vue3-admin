@@ -1,10 +1,10 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-05 22:09:20
- * @FilePath: \src\main.js
+ * @FilePath: /src/main.js
  * @Description:
  */
-import 'element-plus/dist/index.css'
+
 import './permission' // 权限菜单控制
 
 import { createApp } from 'vue'
@@ -19,6 +19,7 @@ const app = createApp(App)
 
 app.config.globalProperties.$ELEMENT = {
   // options
+  size: 'small'
 }
 for (const component of elcomponents) {
   app.component(component.name, component)

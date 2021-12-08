@@ -1,7 +1,12 @@
+/*
+ * @Author: Calvin
+ * @Date: 2021-12-05 22:13:51
+ * @FilePath: /vite.config.js
+ * @Description:
+ */
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import Components from 'unplugin-vue-components/vite'
+import ElementPlus from 'unplugin-element-plus/vite'
 import { defineConfig } from 'vite'
 
 import { svgBuilder } from './src/utils/svgBuilder'
@@ -9,16 +14,15 @@ import { svgBuilder } from './src/utils/svgBuilder'
 export default defineConfig({
   plugins: [
     vue(),
-    Components({
-      resolvers: [ElementPlusResolver()]
+    ElementPlus({
+      useSource: true
     }),
     svgBuilder('./src/assets/icons/svg/') // 这里已经将src/icons/svg/下的svg全部导入，无需再单独导入
   ],
   server: {
     proxy: {
       '/mock': {
-        target:
-          'https://mock.mengxuegu.com/mock/61a74227c6b34465f53db943/vite',
+        target: 'https://mock.mengxuegu.com/mock/61a74227c6b34465f53db943/vite',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/mock/, '')
       }
@@ -26,8 +30,21 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      '~/': `${path.resolve(__dirname, 'src')}/`,
       '~': path.resolve(__dirname, './'),
       '@': path.resolve(__dirname, 'src')
+    }
+  },
+
+  /**
+   * 按需加载，修改主题色
+   * 参考:https://element-plus.gitee.io/zh-CN/guide/theming.html
+   */
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "~/assets/styles/element-variables.scss" as *;`
+      }
     }
   }
 })

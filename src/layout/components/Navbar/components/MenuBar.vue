@@ -1,7 +1,7 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-07 21:38:11
- * @FilePath: \src\layout\components\Navbar\components\MenuBar.vue
+ * @FilePath: /src/layout/components/Navbar/components/MenuBar.vue
  * @Description: 顶部菜单栏
 -->
 <template>
@@ -49,7 +49,7 @@ export default {
       const path = list[0].path
       menuList.value.forEach((item, key) => {
         if (item.path === path) {
-          activeMenu.value = key
+          activeMenu.value = key.toString()
           onSelect(key)
         }
       })
@@ -79,7 +79,7 @@ export default {
 </script>
 <style lang="scss">
 .menu-bar-container {
-  margin-right: 10px;
+  margin: 0 10px;
 
   .el-menu {
     overflow: hidden;
@@ -95,13 +95,13 @@ export default {
       height: 50px;
       background: transparent;
 
+      &.is-active {
+        border-bottom: 0;
+      }
+
       span {
         margin-left: 3px;
         line-height: normal;
-      }
-
-      &.is-active {
-        color: #4165d7;
       }
     }
   }
