@@ -43,3 +43,16 @@ export function setDefaultRoute(routes = []) {
     }
   })
 }
+/**
+ * 获取当前路由的第一个路由path
+ * @param {Array} route 路由对象
+ */
+let path = ''
+export const recurseFirstMenu = (route) => {
+  if (route.children && route.children.length) {
+    recurseFirstMenu(route.children[0])
+  } else {
+    path = route.path
+  }
+  return path
+}

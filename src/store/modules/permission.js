@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 20:17:20
- * @FilePath: /src/store/modules/permission.js
+ * @FilePath: \src\store\modules\permission.js
  * @Description:处理权限路由数据
  */
 
@@ -15,12 +15,16 @@ export default {
   namespaced: true,
   state: {
     permissionList: [],
-    sidebarMenu: []
+    sidebarMenu: [],
+    defaultMenu: []
   },
   getters: {},
   mutations: {
     setMenu(state, menu) {
       state.sidebarMenu = menu
+    },
+    setDefaultMenu(state, menu) {
+      state.defaultMenu = menu
     },
     setPermissionList: (state, routes) => {
       state.permissionList = routes
@@ -49,6 +53,7 @@ export default {
             setDefaultRoute([MainContainer])
             // 保存菜单
             commit('setMenu', children)
+            commit('setDefaultMenu', children)
 
             // Vue Router 4.x已经弃用 addRoutes
             // staticRoutes.forEach((route) => {
@@ -65,9 +70,8 @@ export default {
       })
     },
     changeSidebarMenu({ commit, state }, index) {
-      let menu = state.sidebarMenu[index]
-      // commit('setMenu', menu)
-      console.log(menu, '打印storemenu')
+      let menu = state.defaultMenu[index]
+      commit('setMenu', [menu])
     }
   }
 }

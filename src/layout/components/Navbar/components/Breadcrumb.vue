@@ -1,7 +1,7 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-07 19:06:36
- * @FilePath: /src/layout/components/Navbar/components/Breadcrumb.vue
+ * @FilePath: \src\layout\components\Navbar\components\Breadcrumb.vue
  * @Description: 面包屑
 -->
 <template>

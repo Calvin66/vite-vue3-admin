@@ -1,3 +1,9 @@
+/*
+ * @Author: Calvin
+ * @Date: 2021-12-03 11:46:24
+ * @FilePath: \.eslintrc.js
+ * @Description: 
+ */
 // .eslintrc.js
 module.exports = {
   root: true,
@@ -24,6 +30,7 @@ module.exports = {
     ecmaVersion: 2020,
   },
   rules: {
+    'no-debugger':0,
     'no-undef': 0, // 禁用未声明的变量，除非它们在 /*global */ 注释中被提到
     'no-unused-vars': [1, {
       'vars': 'all', // 检测所有变量，包括全局环境中的变量。
