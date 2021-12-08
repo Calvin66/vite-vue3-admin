@@ -1,7 +1,7 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-05 23:52:14
- * @FilePath: \src\layout\components\Sidebar\index.vue
+ * @FilePath: /src/layout/components/Sidebar/index.vue
  * @Description: 侧边栏组件
 -->
 <template>
@@ -10,13 +10,23 @@
       <el-menu
         :default-active="activeMenu"
         :collapse="!isCollapse"
-        background-color="#304156"
-        text-color="#bfcbd9"
+        background-color="#2f3447"
+        text-color="#ffffff"
         :unique-opened="false"
-        active-text-color="#409EFF"
+        active-text-color="#ffffff"
         :collapse-transition="false"
         mode="vertical"
       >
+        <!-- <el-menu
+        :default-active="activeMenu"
+        :collapse="!isCollapse"
+        background-color="#2f3447"
+        text-color="#ffffff"
+        :unique-opened="false"
+        active-text-color="#ffffff"
+        :collapse-transition="false"
+        mode="vertical"
+      > -->
         <sidebar-item
           v-for="route in sidebarMenu"
           :key="route.path"
@@ -61,11 +71,32 @@ export default {
 </script>
 
 <style lang="scss">
+.el-popper {
+  .el-menu--vertical {
+    .el-menu {
+      &-item {
+        &.is-active,
+        &:hover {
+          color: #4165d7 !important;
+        }
+      }
+    }
+  }
+}
+
 .sidebar-menu-container {
   .el-menu {
     border: none;
     width: 100% !important;
     height: 100%;
+
+    .el-submenu__title,
+    &-item {
+      &.is-active,
+      &:hover {
+        background-color: #4165d7 !important;
+      }
+    }
   }
   //el-menu折叠时，导航文字不隐藏问题
   .el-menu--collapse {
@@ -79,6 +110,7 @@ export default {
           visibility: hidden;
         }
       }
+
       .el-sub-menu__icon-arrow {
         display: none;
       }

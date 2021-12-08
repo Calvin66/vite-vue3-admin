@@ -1,3 +1,9 @@
+<!--
+ * @Author: Calvin
+ * @Date: 2021-12-05 23:52:14
+ * @FilePath: /src/layout/index.vue
+ * @Description: 侧边栏主视图
+-->
 <template>
   <div class="layout-container" :class="{ collapse: !isCollapse }">
     <Sidebar class="sidebar-container" />
@@ -38,6 +44,7 @@ export default {
   overflow: hidden;
   width: 100%;
   height: 100%;
+  background-color: #f7f7f7;
 
   .sidebar-container {
     position: fixed;
@@ -49,7 +56,7 @@ export default {
     width: 210px !important;
     height: 100%;
     font-size: 0;
-    background-color: #304156;
+    background-color: #2f3447;
     transition: width .28s;
   }
 

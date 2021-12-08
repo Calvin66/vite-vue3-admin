@@ -1,3 +1,9 @@
+<!--
+ * @Author: Calvin
+ * @Date: 2021-12-05 20:09:37
+ * @FilePath: /src/layout/components/AppMain.vue
+ * @Description: 
+-->
 <template>
   <div class="app-main-container">
     <router-view v-slot="{ Component, route }">
@@ -19,6 +25,7 @@ export default {
 .app-main-container {
   position: relative;
   overflow-y: auto;
+  padding: 16px;
   width: 100%;
   height: calc(100vh - 50px);
   box-sizing: border-box;

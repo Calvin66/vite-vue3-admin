@@ -23,6 +23,7 @@
  - | 新增vuex | [cc85eb2](https://github.com/Calvin66/vite-vue3-admin/commit/cc85eb2)
  - | 引入vuex | [d1c7f72](https://github.com/Calvin66/vite-vue3-admin/commit/d1c7f72)
  - | Easy Mock | [6446a70](https://github.com/Calvin66/vite-vue3-admin/commit/6446a70)
+ - | element-plus修改主题色 | [b635847](https://github.com/Calvin66/vite-vue3-admin/commit/b635847)
  - | eslint 引入文件排序 | [670d248](https://github.com/Calvin66/vite-vue3-admin/commit/670d248)
  - | layout布局 | [45169e7](https://github.com/Calvin66/vite-vue3-admin/commit/45169e7)
  - | layout路由 | [ec3459f](https://github.com/Calvin66/vite-vue3-admin/commit/ec3459f)

@@ -84,19 +84,39 @@ export default {
   .el-menu {
     overflow: hidden;
     border-bottom: 0;
-    height: 50px;
+    height: 30px;
     background: transparent;
 
     .el-menu-item {
       display: flex;
       align-items: center;
+      margin: 0 10px;
+      border: 1px solid #dcdfe6;
       border-bottom: 0;
-      padding: 0 20px;
-      height: 50px;
+      border-radius: 30px;
+      padding: 0 10px;
+      height: 30px;
+      font-size: 13px;
+      color: #909399;
       background: transparent;
 
+      &:hover,
+      &:focus {
+        background-color: transparent !important;
+      }
+
+      &:hover {
+        border: 1px solid #4165d7;
+        color: #4165d7 !important;
+      }
+
       &.is-active {
-        border-bottom: 0;
+        border: 1px solid #4165d7;
+
+        &:hover,
+        &:focus {
+          background-color: transparent !important;
+        }
       }
 
       span {
