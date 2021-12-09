@@ -37,8 +37,8 @@ a {
   left: 250px;
   padding-bottom: 30px;
   background: #f0f0f0;
-  transition: left .3s ease-in-out;
-  transition: left .3s ease-in-out;
+  transition: left 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out;
 }
 
 .content {
@@ -92,7 +92,7 @@ a {
 
 .move-enter-active,
 .move-leave-active {
-  transition: opacity .1s ease;
+  transition: opacity 0.1s ease;
 }
 
 .move-enter-from,

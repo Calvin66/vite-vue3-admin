@@ -29,7 +29,7 @@ $--colors: (
 
 @forward "element-plus/theme-chalk/src/common/var.scss" with (
   $colors: $--colors,
-      $button-padding-horizontal: (
+  $button-padding-horizontal: (
     "default": 80px
   )
 

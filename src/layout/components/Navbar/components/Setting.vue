@@ -74,7 +74,7 @@ export default {
   .drawer-item {
     padding: 12px 0;
     font-size: 14px;
-    color: rgba(0, 0, 0, .65);
+    color: rgba(0, 0, 0, 0.65);
   }
 
   .drawer-switch {
