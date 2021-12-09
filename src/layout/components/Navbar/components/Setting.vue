@@ -1,7 +1,7 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-09 12:33:20
- * @FilePath: \src\layout\components\Navbar\components\Setting.vue
+ * @FilePath: /src/layout/components/Navbar/components/Setting.vue
  * @Description: 功能设置抽屉
 -->
 <template>
@@ -17,6 +17,10 @@
       <div class="drawer-item">
         <span>显示一级菜单</span>
         <el-switch v-model="showFirstMenu" class="drawer-switch" />
+      </div>
+      <div class="drawer-item">
+        <span>显示路由导航栏</span>
+        <el-switch v-model="showBreadcrumb" class="drawer-switch" />
       </div>
     </el-drawer>
   </div>
@@ -51,6 +55,14 @@ export default {
         store.commit('permission/setNormalMenu')
       }
     })
+    const showBreadcrumb = computed({
+      get() {
+        return Boolean(store.state.app.showBreadcrumb)
+      },
+      set(val) {
+        store.commit('app/setBreadcrumb', val)
+      }
+    })
     const handleClose = () => {
       context.emit('update:settingVisible', false)
     }
@@ -62,6 +74,7 @@ export default {
     return {
       drawerVisible,
       showFirstMenu,
+      showBreadcrumb,
       handleClose
     }
   }

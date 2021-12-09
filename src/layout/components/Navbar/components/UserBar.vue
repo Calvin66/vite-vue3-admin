@@ -1,7 +1,7 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-08 23:35:46
- * @FilePath: \src\layout\components\Navbar\components\UserBar.vue
+ * @FilePath: /src/layout/components/Navbar/components/UserBar.vue
  * @Description: 用户信息
 -->
 <template>
@@ -17,7 +17,7 @@
       <template #dropdown>
         <el-dropdown-menu>
           <el-dropdown-item command="my">个人中心</el-dropdown-item>
-          <el-dropdown-item command="setting">设置</el-dropdown-item>
+          <el-dropdown-item command="setting">布局设置</el-dropdown-item>
           <el-dropdown-item command="exit">退出</el-dropdown-item>
         </el-dropdown-menu>
       </template>

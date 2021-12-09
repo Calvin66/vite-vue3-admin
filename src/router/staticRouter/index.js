@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 11:05:26
- * @FilePath: \src\router\staticRouter\index.js
+ * @FilePath: /src/router/staticRouter/index.js
  * @Description:静态路由(不需要根据后端权限控制的路由)
  */
 
@@ -26,5 +26,18 @@ export const staticRoutes = [
     component: Layout,
     redirect: '/home',
     children: []
-  }
+  },
+  {
+    path: '/404',
+    name: '404',
+    hidden: true,
+    component: () => import('@/views/ErrorPage/404.vue')
+  },
+
+  /**
+   * tip:
+   * { path: '*', redirect: '/404', hidden: true } 不生效
+   * using pathMatch install of "*" in vue-router 4.0
+   */
+  { path: '/:pathMatch(.*)', redirect: '/404', hidden: true }
 ]

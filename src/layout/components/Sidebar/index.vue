@@ -11,22 +11,12 @@
         :default-active="activeMenu"
         :collapse="!isCollapse"
         background-color="#2f3447"
-        text-color="#ffffff"
-        :unique-opened="false"
-        active-text-color="#ffffff"
+        text-color="#bfcbd9"
+        :unique-opened="true"
+        active-text-color="#4165d7"
         :collapse-transition="false"
         mode="vertical"
       >
-        <!-- <el-menu
-        :default-active="activeMenu"
-        :collapse="!isCollapse"
-        background-color="#2f3447"
-        text-color="#ffffff"
-        :unique-opened="false"
-        active-text-color="#ffffff"
-        :collapse-transition="false"
-        mode="vertical"
-      > -->
         <sidebar-item
           v-for="route in sidebarMenu"
           :key="route.path"
@@ -71,37 +61,22 @@ export default {
 </script>
 
 <style lang="scss">
-.el-popper {
-  .el-menu--vertical {
-    .el-menu {
-      &-item {
-        &.is-active,
-        &:hover {
-          color: #4165d7 !important;
-        }
-      }
-    }
-  }
-}
-
 .sidebar-menu-container {
   .el-menu {
     border: none;
     width: 100% !important;
     height: 100%;
 
-    .el-submenu__title,
-    &-item {
-      &.is-active,
-      &:hover {
-        background-color: #4165d7 !important;
-      }
+    .is-active > .el-sub-menu__title {
+      color: #ffffff !important;
     }
   }
   //el-menu折叠时，导航文字不隐藏问题
   .el-menu--collapse {
     .el-sub-menu {
       & > .el-sub-menu__title {
+        padding: 0;
+
         & > span {
           display: inline-block;
           overflow: hidden;

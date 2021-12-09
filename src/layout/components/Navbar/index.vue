@@ -1,14 +1,14 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-06 19:57:10
- * @FilePath: \src\layout\components\Navbar\index.vue
+ * @FilePath: /src/layout/components/Navbar/index.vue
  * @Description: 
 -->
 <template>
   <div class="navbar-container">
     <Collapse></Collapse>
     <MenuBar v-if="showFirstMenu"></MenuBar>
-    <Breadcrumb></Breadcrumb>
+    <Breadcrumb v-if="showBreadcrumb"></Breadcrumb>
     <div class="flex1"></div>
     <UserBar></UserBar>
   </div>
@@ -34,8 +34,10 @@ export default {
     const store = useStore()
     // 是否展示一级菜单
     const showFirstMenu = computed(() => store.state.app.showFirstMenu)
+    const showBreadcrumb = computed(() => store.state.app.showBreadcrumb)
     return {
-      showFirstMenu
+      showFirstMenu,
+      showBreadcrumb
     }
   }
 }

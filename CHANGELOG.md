@@ -33,6 +33,12 @@
  - | prettier配置修改 | [999e962](https://github.com/Calvin66/vite-vue3-admin/commit/999e962)
 
 
+### 🎨 代码样式
+范围|描述|commitId
+--|--|--
+ - | stylelint校验规则修改：小数点前导零 | [50e6561](https://github.com/Calvin66/vite-vue3-admin/commit/50e6561)
+
+
 ### 🐛 Bug 修复
 范围|描述|commitId
 --|--|--

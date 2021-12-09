@@ -21,8 +21,9 @@
  */
 
 /**
- * fixBug
+ * tip
  * children => path需要写全，不然Breadcrumb面包屑点击父级菜单不跳转
+ * 新增svg图标后需要重新运行项目后才生效
  */
 import Redirect from '@/components/Redirect/index.vue'
 export const dynamicRoutes = [
@@ -30,48 +31,48 @@ export const dynamicRoutes = [
     path: '/home',
     component: () => import('@/views/Home/index.vue'),
     name: 'Home',
-    meta: { title: '首页', svgIcon: 'icon-activity' }
+    meta: { title: '首页', svgIcon: 'icon-home' }
   },
   {
     path: '/systemManage',
     component: () => import('@/views/SystemManage/index.vue'),
     name: 'SystemManage',
-    meta: { title: '系统管理', svgIcon: 'icon-activity' }
+    meta: { title: '系统管理', svgIcon: 'icon-system' }
   },
   {
     path: '/permissionManage',
     component: () => import('@/views/PermissionManage/index.vue'),
     name: 'PermissionManage',
-    meta: { title: '权限管理', svgIcon: 'icon-activity' }
+    meta: { title: '权限管理', svgIcon: 'icon-permission' }
   },
   {
     path: '/userManage',
     component: () => import('@/views/UserManage/index.vue'),
     name: 'UserManage',
-    meta: { title: '用户管理', svgIcon: 'icon-activity' }
+    meta: { title: '用户管理', svgIcon: 'icon-user' }
   },
   {
     path: '/menuManage',
     component: Redirect,
     name: 'MenuManage',
-    meta: { title: '菜单管理', svgIcon: 'icon-activity' },
+    meta: { title: '菜单管理', svgIcon: 'icon-menu' },
     children: [
       {
         path: '/menuManage/menu1',
         name: 'MenuManageMenu1',
         component: () => import('@/views/MenuManage/Menu1/index.vue'),
-        meta: { title: '菜单1', svgIcon: 'icon-activity' }
+        meta: { title: '菜单1-1' }
       },
       {
         path: '/menuManage/menu2',
         component: Redirect,
-        meta: { title: '次级菜单', svgIcon: 'icon-activity' },
+        meta: { title: '次级菜单' },
         children: [
           {
             path: '/menuManage/menu2/menu1',
             name: 'MenuManageMenu2Menu1',
             component: () => import('@/views/MenuManage/Menu2/Menu1/index.vue'),
-            meta: { title: '菜单1', svgIcon: 'icon-activity' }
+            meta: { title: '菜单2-1' }
           }
         ]
       }

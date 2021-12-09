@@ -6,6 +6,7 @@
  */
 
 import './permission' // 权限菜单控制
+import '@/assets/styles/index.scss'
 
 import { createApp } from 'vue'
 

@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 20:17:20
- * @FilePath: \src\store\modules\permission.js
+ * @FilePath: /src/store/modules/permission.js
  * @Description:处理权限路由数据
  */
 
@@ -60,10 +60,9 @@ export default {
             commit('setDefaultMenu', children)
 
             // Vue Router 4.x已经弃用 addRoutes
-            // staticRoutes.forEach((route) => {
-            //   router.addRoute(route)
-            // })
-            router.addRoute(...staticRoutes)
+            staticRoutes.forEach((route) => {
+              router.addRoute(route)
+            })
             // 保存权限路由
             commit('setPermissionList', [...staticRoutes])
             resolve(true)
