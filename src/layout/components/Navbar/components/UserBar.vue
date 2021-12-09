@@ -1,7 +1,7 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-08 23:35:46
- * @FilePath: /src/layout/components/Navbar/components/UserBar.vue
+ * @FilePath: \src\layout\components\Navbar\components\UserBar.vue
  * @Description: 用户信息
 -->
 <template>
@@ -17,6 +17,7 @@
       <template #dropdown>
         <el-dropdown-menu>
           <el-dropdown-item command="my">个人中心</el-dropdown-item>
+          <el-dropdown-item command="setting">设置</el-dropdown-item>
           <el-dropdown-item command="exit">退出</el-dropdown-item>
         </el-dropdown-menu>
       </template>
@@ -25,16 +26,40 @@
 </template>
 <script>
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
+
+import { loginout } from '@/api/user'
 export default {
   name: 'UserBar',
   setup() {
     const store = useStore()
-    const username = computed(() => store.state.user.username)
-    const onCommand = (name) => {}
+    const router = useRouter()
+    const username = computed(() => store.state.user.userInfo.username)
+    const onCommand = (name) => {
+      switch (name) {
+        case 'my':
+          break
+        case 'exit':
+          loginoutAction()
+          break
+      }
+    }
+    const loginoutAction = () => {
+      loginout({}).then((res) => {
+        if (res.isSuccess) {
+          store.dispatch('user/loginout').then(() => {
+            router.push('/login')
+            //此处reload清空路由和重置部分状态
+            location.reload()
+          })
+        }
+      })
+    }
     return {
       username,
-      onCommand
+      onCommand,
+      loginoutAction
     }
   }
 }

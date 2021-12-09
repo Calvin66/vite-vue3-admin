@@ -1,7 +1,7 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-07 21:38:11
- * @FilePath: /src/layout/components/Navbar/components/MenuBar.vue
+ * @FilePath: \src\layout\components\Navbar\components\MenuBar.vue
  * @Description: 顶部菜单栏
 -->
 <template>
@@ -91,7 +91,7 @@ export default {
       display: flex;
       align-items: center;
       margin: 0 10px;
-      border: 1px solid #dcdfe6;
+      border: 1px solid #dcdfe6 !important;
       border-bottom: 0;
       border-radius: 30px;
       padding: 0 10px;
@@ -111,7 +111,7 @@ export default {
       }
 
       &.is-active {
-        border: 1px solid #4165d7;
+        border: 1px solid #4165d7 !important;
 
         &:hover,
         &:focus {

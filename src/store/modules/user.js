@@ -1,31 +1,53 @@
+/*
+ * @Author: Calvin
+ * @Date: 2021-12-09 09:15:38
+ * @FilePath: \src\store\modules\user.js
+ * @Description:
+ */
 import {
   getToken,
   localstorageGet,
+  localstorageRemove,
   localstorageSet,
+  removeToken,
   setToken
 } from '@/utils/auth'
 export default {
   namespaced: true,
   state: {
-    username: localstorageGet('username') || '',
-    role: localstorageGet('role') || '',
+    userInfo: JSON.parse(localstorageGet('userInfo')) || {
+      role: '',
+      username: ''
+    },
     token: getToken() || ''
   },
   mutations: {
+    setUerInfo(state, userInfo) {
+      state.userInfo = userInfo
+      localstorageSet('userInfo', userInfo)
+    },
     setToken(state, token) {
       state.token = token
       setToken(token)
     },
-    setUer(state, user) {
-      const { name, role, token } = user
-      state.username = name
-      state.role = role
-      localstorageSet('username', name)
-      localstorageSet('role', role)
-      state.token = token
-      setToken(token)
+    clearUerInfo(state) {
+      state.info = {}
+      localstorageRemove('userInfo')
+    },
+    clearToken(state) {
+      state.token = ''
+      removeToken()
     }
   },
-  actions: {},
+  actions: {
+    loginout({ dispatch }) {
+      dispatch('userRemove')
+    },
+    //移除用户信息
+    userRemove({ commit }) {
+      commit('clearUerInfo')
+      commit('clearToken')
+    }
+  },
   getters: {}
 }

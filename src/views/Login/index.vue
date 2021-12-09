@@ -72,12 +72,12 @@ export default {
             username: state.loginForm.username,
             password: state.loginForm.password
           }).then((res) => {
-            const { token, name, role } = res
-            store.commit('user/setUer', {
-              name,
-              role,
-              token
+            const { token, username, role } = res
+            store.commit('user/setUerInfo', {
+              username,
+              role
             })
+            store.commit('user/setToken', token)
             ElMessage.success(res.message)
             router.push({ path: '/' })
           })

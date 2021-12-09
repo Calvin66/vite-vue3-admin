@@ -34,7 +34,7 @@ export default {
     // 获取权限菜单
     getPermissionList({ commit }) {
       // role 为方便mock请求，真实开发删除
-      const role = store.state.user.role
+      const role = store.state.user.userInfo.role
       return new Promise((resolve, reject) => {
         getPermissionMenus(role)
           .then((res) => {

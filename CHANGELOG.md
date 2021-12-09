@@ -1,4 +1,4 @@
-# 0.0.0 (2021-12-08)
+# 0.0.0 (2021-12-09)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -8,6 +8,7 @@
  - | 侧边栏图标 | [0e8974d](https://github.com/Calvin66/vite-vue3-admin/commit/0e8974d)
  - | 侧边栏icon显示 | [3bd40e4](https://github.com/Calvin66/vite-vue3-admin/commit/3bd40e4)
  - | 顶部导航栏加入一级菜单 | [61e96a3](https://github.com/Calvin66/vite-vue3-admin/commit/61e96a3)
+ - | 顶部导航栏用户中心 | [fb2dd8a](https://github.com/Calvin66/vite-vue3-admin/commit/fb2dd8a)
  - | 动态路由 | [92aeb57](https://github.com/Calvin66/vite-vue3-admin/commit/92aeb57)
  - | 动态路由（未完成） | [2c7fa62](https://github.com/Calvin66/vite-vue3-admin/commit/2c7fa62)
  - | 配置路由、新增登录页 | [fdf4948](https://github.com/Calvin66/vite-vue3-admin/commit/fdf4948)
