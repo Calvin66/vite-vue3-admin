@@ -4,11 +4,12 @@
  * @FilePath: \src\store\modules\app.js
  * @Description:
  */
+import { localstorageSet, localstorageTypeGet } from '@/utils/auth'
 export default {
   namespaced: true,
   state: {
     isCollapse: true,
-    showFirstMenu: false
+    showFirstMenu: localstorageTypeGet('showFirstMenu', 'boolen') || false
   },
   mutations: {
     setCollapse(state, value) {
@@ -16,6 +17,7 @@ export default {
     },
     setFirstMenu(state, value) {
       state.showFirstMenu = value
+      localstorageSet('showFirstMenu', value)
     }
   },
   actions: {},

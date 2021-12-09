@@ -47,3 +47,30 @@ export function setToken(token) {
 export function removeToken() {
   return localstorageRemove(tokenKey)
 }
+/**
+ * @description 转换localStorage取值类型
+ * @param {*} name
+ * @param {*} type
+ * @returns
+ */
+export function localstorageTypeGet(name, type) {
+  name = `${storageKey}-${name}`
+  if (!name) return
+  let data = window.localStorage.getItem(name)
+  if (type === 'number') {
+    return Number(data)
+  }
+  if (type === 'boolen') {
+    if (data === 'false') {
+      data = false
+    } else {
+      data = true
+    }
+    return data
+  }
+  if (type === 'object') {
+    data = JSON.parse(data)
+    return data
+  }
+  return data
+}
