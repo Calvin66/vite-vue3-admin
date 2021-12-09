@@ -1,10 +1,18 @@
+/*
+ * @Author: Calvin
+ * @Date: 2021-12-09 09:15:38
+ * @FilePath: \src\utils\auth.js
+ * @Description:
+ */
 const tokenKey = 'token'
 const storageKey = 'vite-vue3-admin'
 
 export const localstorageSet = (name, content) => {
   name = `${storageKey}-${name}`
   if (!name) return
-  if (typeof content !== 'string') {
+  const isObject = Object.prototype.toString.call(content) === '[object Object]'
+  const isArry = Object.prototype.toString.call(content) === '[object Array]'
+  if (isObject || isArry) {
     content = JSON.stringify(content)
   }
   window.localStorage.setItem(name, content)

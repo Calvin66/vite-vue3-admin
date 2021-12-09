@@ -17,6 +17,7 @@
  - | 添加git提交代码校验 | [a59be60](https://github.com/Calvin66/vite-vue3-admin/commit/a59be60)
  - | 头部导航栏面包屑 | [11705dd](https://github.com/Calvin66/vite-vue3-admin/commit/11705dd)
  - | 头部导航栏展示一级菜单 | [59fa5dc](https://github.com/Calvin66/vite-vue3-admin/commit/59fa5dc)
+ - | 退出登录功能 | [45a23c1](https://github.com/Calvin66/vite-vue3-admin/commit/45a23c1)
  - | 完善侧边栏 | [332b99f](https://github.com/Calvin66/vite-vue3-admin/commit/332b99f)
  - | 新增侧边栏 | [53acaaf](https://github.com/Calvin66/vite-vue3-admin/commit/53acaaf)
  - | 新增axios | [212904d](https://github.com/Calvin66/vite-vue3-admin/commit/212904d)

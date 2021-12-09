@@ -22,23 +22,36 @@
         </el-dropdown-menu>
       </template>
     </el-dropdown>
+    <Setting
+      :settingVisible="settingVisible"
+      @update:settingVisible="settingVisible = $event"
+    ></Setting>
   </div>
 </template>
 <script>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 
 import { loginout } from '@/api/user'
+
+import Setting from './Setting.vue'
 export default {
   name: 'UserBar',
+  components: {
+    Setting
+  },
   setup() {
     const store = useStore()
     const router = useRouter()
+    const settingVisible = ref(false)
     const username = computed(() => store.state.user.userInfo.username)
     const onCommand = (name) => {
       switch (name) {
         case 'my':
+          break
+        case 'setting':
+          settingVisible.value = true
           break
         case 'exit':
           loginoutAction()
@@ -59,6 +72,7 @@ export default {
     return {
       username,
       onCommand,
+      settingVisible,
       loginoutAction
     }
   }

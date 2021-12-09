@@ -1,13 +1,13 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-06 19:57:10
- * @FilePath: /src/layout/components/Navbar/index.vue
+ * @FilePath: \src\layout\components\Navbar\index.vue
  * @Description: 
 -->
 <template>
   <div class="navbar-container">
     <Collapse></Collapse>
-    <MenuBar></MenuBar>
+    <MenuBar v-if="showFirstMenu"></MenuBar>
     <Breadcrumb></Breadcrumb>
     <div class="flex1"></div>
     <UserBar></UserBar>
@@ -15,6 +15,9 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+
 import Breadcrumb from './components/Breadcrumb.vue'
 import Collapse from './components/Collapse.vue'
 import MenuBar from './components/MenuBar.vue'
@@ -27,7 +30,14 @@ export default {
     MenuBar,
     UserBar
   },
-  setup() {}
+  setup() {
+    const store = useStore()
+    // 是否展示一级菜单
+    const showFirstMenu = computed(() => store.state.app.showFirstMenu)
+    return {
+      showFirstMenu
+    }
+  }
 }
 </script>
 

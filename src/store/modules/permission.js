@@ -23,8 +23,12 @@ export default {
     setMenu(state, menu) {
       state.sidebarMenu = menu
     },
+    //保存初始菜单
     setDefaultMenu(state, menu) {
       state.defaultMenu = menu
+    },
+    setNormalMenu(state) {
+      state.sidebarMenu = state.defaultMenu
     },
     setPermissionList: (state, routes) => {
       state.permissionList = routes
@@ -69,6 +73,7 @@ export default {
           })
       })
     },
+    //修改侧边栏菜单
     changeSidebarMenu({ commit, state }, index) {
       let menu = state.defaultMenu[index]
       commit('setMenu', [menu])
