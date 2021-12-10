@@ -183,3 +183,7 @@ a {
 .v-note-wrapper .v-note-panel {
   min-height: 500px;
 }
+// 修改nprogress颜色
+#nprogress .bar {
+  background: #4165d7 !important; //自定义颜色
+}

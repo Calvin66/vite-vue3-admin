@@ -21,6 +21,7 @@
  - | 退出登录功能 | [45a23c1](https://github.com/Calvin66/vite-vue3-admin/commit/45a23c1)
  - | 完善侧边栏 | [332b99f](https://github.com/Calvin66/vite-vue3-admin/commit/332b99f)
  - | 新增侧边栏 | [53acaaf](https://github.com/Calvin66/vite-vue3-admin/commit/53acaaf)
+ - | 新增权限用户，生成不同权限菜单 | [c68acb6](https://github.com/Calvin66/vite-vue3-admin/commit/c68acb6)
  - | 新增axios | [212904d](https://github.com/Calvin66/vite-vue3-admin/commit/212904d)
  - | 新增stylelint:校验css样式 | [4119f34](https://github.com/Calvin66/vite-vue3-admin/commit/4119f34)
  - | 新增vuex | [cc85eb2](https://github.com/Calvin66/vite-vue3-admin/commit/cc85eb2)
