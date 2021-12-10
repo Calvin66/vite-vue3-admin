@@ -67,7 +67,7 @@ function request(axiosConfig, customOptions, loadingOptions) {
         }
       }
       // 自动携带token
-      if (getToken() && typeof window !== 'undefined') {
+      if (getToken()) {
         config.headers.Authorization = getToken()
       }
 

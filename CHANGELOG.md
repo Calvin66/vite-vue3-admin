@@ -1,4 +1,4 @@
-# 0.0.0 (2021-12-09)
+# 0.0.0 (2021-12-10)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -44,6 +44,7 @@
 --|--|--
  - | 动态路由配置完成 | [d6dfcd0](https://github.com/Calvin66/vite-vue3-admin/commit/d6dfcd0)
  - | 全局引入ele样式，修复ElMessage显示问题 | [b88b8f6](https://github.com/Calvin66/vite-vue3-admin/commit/b88b8f6)
+ - | 添加404路由;添加icon;修复静态路由不能跳转问题 | [2406aee](https://github.com/Calvin66/vite-vue3-admin/commit/2406aee)
  - | 修复侧边栏菜单不展示问题 | [6557fbd](https://github.com/Calvin66/vite-vue3-admin/commit/6557fbd)
  - | 修复侧边栏折叠导航文字不隐藏问题 | [2e07942](https://github.com/Calvin66/vite-vue3-admin/commit/2e07942)
  - | 修复动态路由跳转失败问题 | [c853c13](https://github.com/Calvin66/vite-vue3-admin/commit/c853c13)

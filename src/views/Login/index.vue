@@ -22,6 +22,16 @@
       <div class="login-btn">
         <el-button type="primary" @click="submitForm">登录</el-button>
       </div>
+      <div class="tip-container">
+        <div class="tips">
+          <span style="margin-right: 18px;">超级管理员 : admin</span>
+          <span>密码 : 123456</span>
+        </div>
+        <div class="tips">
+          <span style="margin-right: 18px;">管理员 : editor</span>
+          <span>密码 : 123456</span>
+        </div>
+      </div>
       <span class="icon icon-l-t" />
       <span class="icon icon-r-t" />
       <span class="icon icon-l-b" />
@@ -164,6 +174,16 @@ export default {
       right: -3px;
       border-top: 3px solid #20a3f5;
       border-right: 3px solid #20a3f5;
+    }
+
+    .tip-container {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ffffff;
+
+      .tips {
+        margin-bottom: 10px;
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 20:17:20
- * @FilePath: /src/store/modules/permission.js
+ * @FilePath: \src\store\modules\permission.js
  * @Description:处理权限路由数据
  */
 
@@ -9,7 +9,6 @@ import { getPermissionMenus } from '@/api/permission'
 import { dynamicRoutes } from '@/router/dynamicRouter/index'
 import router from '@/router/index'
 import { staticRoutes } from '@/router/staticRouter/index'
-import store from '@/store'
 import { recurseRoutes, setDefaultRoute } from '@/utils/recurseRoutes'
 export default {
   namespaced: true,
@@ -37,10 +36,8 @@ export default {
   actions: {
     // 获取权限菜单
     getPermissionList({ commit }) {
-      // role 为方便mock请求，真实开发删除
-      const role = store.state.user.userInfo.role
       return new Promise((resolve, reject) => {
-        getPermissionMenus(role)
+        getPermissionMenus()
           .then((res) => {
             const permissionList = res.list
             /* 根据权限刷选出我们设置好的路由并加入到 path='/' 的children */
