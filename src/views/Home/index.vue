@@ -1,12 +1,12 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-03 22:15:33
- * @FilePath: /src/views/Home/index.vue
+ * @FilePath: \src\views\Home\index.vue
  * @Description: 
 -->
 <template>
   <div class="home-container">
-    <el-button type="primary">按钮</el-button>
+    <el-button v-permission="'home/button'" type="primary">按钮</el-button>
   </div>
 </template>
 

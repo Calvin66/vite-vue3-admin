@@ -13,7 +13,8 @@ import { recurseRoutes, setDefaultRoute } from '@/utils/recurseRoutes'
 export default {
   namespaced: true,
   state: {
-    permissionList: [],
+    permissionList: [], //菜单权限
+    btnPermissionList: [], //按钮权限
     sidebarMenu: [],
     defaultMenu: []
   },
@@ -31,6 +32,9 @@ export default {
     },
     setPermissionList: (state, routes) => {
       state.permissionList = routes
+    },
+    setBtnPermissionList(state, value) {
+      state.btnPermissionList = value
     }
   },
   actions: {
@@ -40,6 +44,9 @@ export default {
         getPermissionMenus()
           .then((res) => {
             const permissionList = res.list
+            // 保存权限按钮数据
+            const btnPermissionList = res.buttonList || []
+            commit('setBtnPermissionList', btnPermissionList)
             /* 根据权限刷选出我们设置好的路由并加入到 path='/' 的children */
             const routes = recurseRoutes(permissionList, dynamicRoutes)
 
