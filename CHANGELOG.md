@@ -27,6 +27,7 @@
  - | 新增stylelint:校验css样式 | [4119f34](https://github.com/Calvin66/vite-vue3-admin/commit/4119f34)
  - | 新增vuex | [cc85eb2](https://github.com/Calvin66/vite-vue3-admin/commit/cc85eb2)
  - | 引入vuex | [d1c7f72](https://github.com/Calvin66/vite-vue3-admin/commit/d1c7f72)
+ - | 注册全局权限按钮指令 | [a539429](https://github.com/Calvin66/vite-vue3-admin/commit/a539429)
  - | Easy Mock | [6446a70](https://github.com/Calvin66/vite-vue3-admin/commit/6446a70)
  - | element-plus修改主题色 | [b635847](https://github.com/Calvin66/vite-vue3-admin/commit/b635847)
  - | eslint 引入文件排序 | [670d248](https://github.com/Calvin66/vite-vue3-admin/commit/670d248)

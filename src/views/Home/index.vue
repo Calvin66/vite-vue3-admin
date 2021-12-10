@@ -6,14 +6,27 @@
 -->
 <template>
   <div class="home-container">
-    <el-button v-permission="'home/button'" type="primary">按钮</el-button>
+    <el-button v-permission="'home/button'" type="primary" @click="showDialog">
+      按钮
+    </el-button>
   </div>
+  <rsh-dialog v-model:visible="visible"></rsh-dialog>
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
   name: 'Home',
-  setup() {}
+  setup() {
+    const visible = ref(false)
+    const showDialog = () => {
+      visible.value = true
+    }
+    return {
+      visible,
+      showDialog
+    }
+  }
 }
 </script>
 

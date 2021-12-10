@@ -1,7 +1,7 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-08 23:35:46
- * @FilePath: /src/layout/components/Navbar/components/UserBar.vue
+ * @FilePath: \src\layout\components\Navbar\components\UserBar.vue
  * @Description: 用户信息
 -->
 <template>
@@ -22,10 +22,7 @@
         </el-dropdown-menu>
       </template>
     </el-dropdown>
-    <Setting
-      :settingVisible="settingVisible"
-      @update:settingVisible="settingVisible = $event"
-    ></Setting>
+    <Setting v-model:settingVisible="settingVisible"></Setting>
   </div>
 </template>
 <script>

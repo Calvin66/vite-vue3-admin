@@ -1,7 +1,7 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-09 12:33:20
- * @FilePath: /src/layout/components/Navbar/components/Setting.vue
+ * @FilePath: \src\layout\components\Navbar\components\Setting.vue
  * @Description: 功能设置抽屉
 -->
 <template>

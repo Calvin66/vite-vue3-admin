@@ -10,6 +10,8 @@ import '@/assets/styles/index.scss'
 
 import { createApp } from 'vue'
 
+//注册全局组件
+import components from '@/components/index.js'
 import SvgIcon from '@/components/SvgIcon/index.vue'
 //注册全局指令
 import directive from '@/directives/index'
@@ -20,13 +22,15 @@ import router from './router/index'
 import store from './store'
 
 const app = createApp(App)
-directive(app)
+
 app.config.globalProperties.$ELEMENT = {
   // options
   size: 'small'
 }
+
 for (const component of elcomponents) {
   app.component(component.name, component)
 }
-
+directive(app)
+components(app)
 app.component('svg-icon', SvgIcon).use(store).use(router).mount('#app')

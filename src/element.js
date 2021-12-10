@@ -15,6 +15,7 @@ import {
   ElBreadcrumb,
   ElBreadcrumbItem,
   ElButton,
+  ElDialog,
   ElDrawer,
   ElDropdown,
   ElDropdownItem,
@@ -60,5 +61,6 @@ export const elcomponents = [
   ElSubMenu,
   ElTable,
   ElDrawer,
-  ElSwitch
+  ElSwitch,
+  ElDialog
 ]
