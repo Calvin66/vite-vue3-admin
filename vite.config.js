@@ -5,6 +5,7 @@
  * @Description:
  */
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
 import ElementPlus from 'unplugin-element-plus/vite'
 import { defineConfig } from 'vite'
@@ -14,6 +15,7 @@ import { svgBuilder } from './src/utils/svgBuilder'
 export default defineConfig({
   plugins: [
     vue(),
+    vueJsx(),
     ElementPlus({
       useSource: true
     }),

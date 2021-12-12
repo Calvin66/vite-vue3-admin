@@ -35,6 +35,7 @@
  - | layout布局 | [45169e7](https://github.com/Calvin66/vite-vue3-admin/commit/45169e7)
  - | layout路由 | [ec3459f](https://github.com/Calvin66/vite-vue3-admin/commit/ec3459f)
  - | prettier配置修改 | [999e962](https://github.com/Calvin66/vite-vue3-admin/commit/999e962)
+ - | rsh-dialog | [2628904](https://github.com/Calvin66/vite-vue3-admin/commit/2628904)
 
 
 ### 🎨 代码样式

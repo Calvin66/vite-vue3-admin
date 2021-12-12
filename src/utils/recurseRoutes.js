@@ -1,7 +1,7 @@
 /*
  * @Author: Calvin
  * @Date: 2021-12-06 21:25:11
- * @FilePath: \src\utils\recurseRoutes.js
+ * @FilePath: /src/utils/recurseRoutes.js
  * @Description:动态路由处理函数
  */
 
@@ -55,23 +55,4 @@ export const recurseFirstMenu = (route) => {
     path = route.path
   }
   return path
-}
-
-/**
- * @description 过滤权限按钮
- * @param {*} btnPermissionList 后端返回按钮权限列表
- * @returns
- */
-export function recursionBtn(btnPermissionList = []) {
-  if (!btnPermissionList.length) return []
-  const recursionBtnList = []
-  btnPermissionList.forEach((item) => {
-    if (item.resourcesVoList) {
-      recursionBtnList.push(...item.resourcesVoList)
-    }
-    if (item.children && item.children.length > 0) {
-      recursionBtn(item.children)
-    }
-  })
-  return filterBtn(recursionBtnList)
 }
