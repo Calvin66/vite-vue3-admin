@@ -24,11 +24,11 @@
       </div>
       <div class="tip-container">
         <div class="tips">
-          <span style="margin-right: 18px;">超级管理员 : admin</span>
+          <span style="margin-right: 18px">超级管理员 : admin</span>
           <span>密码 : 123456</span>
         </div>
         <div class="tips">
-          <span style="margin-right: 18px;">管理员 : editor</span>
+          <span style="margin-right: 18px">管理员 : editor</span>
           <span>密码 : 123456</span>
         </div>
       </div>

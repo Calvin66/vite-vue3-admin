@@ -56,6 +56,7 @@
  - | 修复动态路由跳转失败问题 | [c853c13](https://github.com/Calvin66/vite-vue3-admin/commit/c853c13)
  - | 修复多级菜单不展示问题 | [27586c3](https://github.com/Calvin66/vite-vue3-admin/commit/27586c3)
  - | 修复路由刷新页面不加载问题 | [271b015](https://github.com/Calvin66/vite-vue3-admin/commit/271b015)
+ - | 修复eslint jsx语法报错问题 | [f5f7650](https://github.com/Calvin66/vite-vue3-admin/commit/f5f7650)
  - | 修复eslint配置导致错误代码没有提示 | [7539434](https://github.com/Calvin66/vite-vue3-admin/commit/7539434)
  - | 修复localstorage缓存boolen类型问题 | [c270365](https://github.com/Calvin66/vite-vue3-admin/commit/c270365)
  - | 修改svg组件 | [42e0535](https://github.com/Calvin66/vite-vue3-admin/commit/42e0535)

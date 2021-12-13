@@ -38,6 +38,8 @@ module.exports = {
     'value-no-vendor-prefix': true,
     // property-no-vendor-prefix
     'property-no-vendor-prefix': true,
+    //要求或不允许在声明块后面的分号
+    'declaration-block-trailing-semicolon': null,
     // 禁止小于 1 的小数有一个前导零
     // 'number-leading-zero': 'never',
     // 禁止空第一行
