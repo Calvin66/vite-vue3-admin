@@ -59,6 +59,7 @@
  - | 修复eslint jsx语法报错问题 | [f5f7650](https://github.com/Calvin66/vite-vue3-admin/commit/f5f7650)
  - | 修复eslint配置导致错误代码没有提示 | [7539434](https://github.com/Calvin66/vite-vue3-admin/commit/7539434)
  - | 修复localstorage缓存boolen类型问题 | [c270365](https://github.com/Calvin66/vite-vue3-admin/commit/c270365)
+ - | 修复stylelint 行内逗号与prettier冲突问题 | [2340969](https://github.com/Calvin66/vite-vue3-admin/commit/2340969)
  - | 修改svg组件 | [42e0535](https://github.com/Calvin66/vite-vue3-admin/commit/42e0535)
  - | eslint 重新配置 | [24affa6](https://github.com/Calvin66/vite-vue3-admin/commit/24affa6)
 

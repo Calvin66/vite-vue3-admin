@@ -5,18 +5,60 @@
  * @Description: 公共弹窗
 -->
 <template>
-  <el-dialog :model-value="visible" @close="handleClose">
-    <template #title>提示</template>
-    <template #footer>
-      <span class="dialog-footer">
-        <el-button>Cancel</el-button>
-        <el-button type="primary">Confirm</el-button>
-      </span>
-    </template>
-  </el-dialog>
+  <div class="rsh-dialog-container">
+    <el-dialog
+      :model-value="visible"
+      :width="width"
+      :top="top"
+      :fullscreen="fullscreen"
+      :modal="modal"
+      :appendToBody="appendToBody"
+      :lockScroll="lockScroll"
+      :customClass="customClass"
+      :closeOnClickModal="closeOnClickModal"
+      :closeOnPressEscape="closeOnPressEscape"
+      :showClose="showClose"
+      :center="center"
+    >
+      <template v-if="!hiddenControls" #title>
+        <div class="rsh-dialog__header">
+          <span class="rsh-dialog__title">{{ title }}</span>
+          <div class="rsh-dialog__controls">
+            <rsh-icon
+              v-if="hasControls('fullscreen') && !fullscreen"
+              @click="changeFullscreen(true)"
+              name="FullScreen"
+              class="rsh-dialog__controls-icon"
+            ></rsh-icon>
+            <rsh-icon
+              v-if="hasControls('fullscreen') && fullscreen"
+              @click="changeFullscreen(false)"
+              name="Minus"
+              class="rsh-dialog__controls-icon"
+            ></rsh-icon>
+            <rsh-icon
+              v-if="hasControls('close')"
+              @click="handleClose"
+              name="Close"
+              class="rsh-dialog__controls-icon"
+            ></rsh-icon>
+          </div>
+        </div>
+      </template>
+      <template v-else #title>
+        {{ title }}
+      </template>
+      <div class="rsh-dialog__body" :style="styleObject">
+        <slot></slot>
+      </div>
+      <template #footer>
+        <slot name="footer"></slot>
+      </template>
+    </el-dialog>
+  </div>
 </template>
 <script>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 export default {
   name: 'rsh-dialog',
   props: {
@@ -30,52 +72,139 @@ export default {
     // 宽度
     width: {
       type: String,
-      default: '50%'
+      default: '40%'
     },
-    // 是否缓存
-    keepAlive: Boolean,
-    // 是否拖动
-    drag: {
+    // margin-top 值
+    top: {
+      type: String,
+      default: '15vh'
+    },
+    //是否需要遮罩层
+    modal: {
       type: Boolean,
       default: true
     },
-    // el-dialog 参数
-    props: {
-      type: Object,
-      default: () => {
-        return {}
-      }
+    appendToBody: {
+      type: Boolean,
+      default: false
     },
-    // el-dialog 事件
-    on: {
-      type: Object,
-      default: () => {
-        return {}
-      }
+    lockScroll: {
+      type: Boolean,
+      default: true
     },
+    customClass: String,
+    closeOnClickModal: {
+      type: Boolean,
+      default: true
+    },
+    closeOnPressEscape: {
+      type: Boolean,
+      default: true
+    },
+    showClose: {
+      type: Boolean,
+      default: false
+    },
+    center: {
+      type: Boolean,
+      default: false
+    },
+    //头部控件
     controls: {
       type: Array,
       default: () => ['fullscreen', 'close']
     },
+    //隐藏头部控件
     hiddenControls: {
-      type: Boolean,
-      default: false
-    },
-    hiddenHeader: {
       type: Boolean,
       default: false
     }
   },
   emits: ['update:visible'],
   setup(props, { emit }) {
-    const dialogVisible = ref(true)
+    const fullscreen = ref(false)
+    const maxHeight = computed(() => {
+      // 非全屏
+      if (!fullscreen.value) {
+        return `calc(100vh - ${props.top} - 30vh)`
+      }
+      return '80vh'
+    })
+
+    const styleObject = {
+      maxHeight: maxHeight.value,
+      overflowY: 'auto',
+      padding: '30px 20px'
+    }
+    const hasControls = (val) => {
+      return props.controls.includes(val)
+    }
+    const changeFullscreen = (type) => {
+      fullscreen.value = type
+    }
     const handleClose = () => {
       emit('update:visible', false)
     }
     return {
-      dialogVisible,
-      handleClose
+      maxHeight,
+      styleObject,
+      fullscreen,
+      handleClose,
+      hasControls,
+      changeFullscreen
     }
   }
 }
 </script>
+<style lang="scss">
+.rsh-dialog-container {
+  .el-dialog {
+    margin-bottom: 0 !important;
+  }
+
+  .rsh-dialog__header {
+    position: relative;
+    height: 21px;
+    line-height: 21px;
+  }
+
+  .rsh-dialog__title {
+    display: block;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .rsh-dialog__controls {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    display: flex;
+    justify-content: flex-end;
+
+    .rsh-dialog__controls-icon {
+      margin: 0 10px;
+      font-size: 16px;
+      color: #606266;
+      cursor: pointer;
+
+      &:hover {
+        color: #4165d7;
+      }
+    }
+  }
+
+  .el-dialog__body {
+    padding: 0 !important;
+    background-color: #f7f7f7;
+  }
+  // 暂时处理fullscreen  max-height不改变问题
+  .is-fullscreen {
+    .el-dialog__body {
+      .rsh-dialog__body {
+        max-height: 80vh !important;
+      }
+    }
+  }
+}
+</style>

@@ -10,7 +10,20 @@
       按钮
     </el-button>
   </div>
-  <rsh-dialog v-model:visible="visible"></rsh-dialog>
+  <rsh-dialog
+    v-model:visible="visible"
+    :controls="['fullscreen', 'close']"
+    title="弹框"
+  >
+    <!-- <div v-for="i in 1000" :key="i">测试高度</div> -->
+
+    <template #footer>
+      <span class="dialog-footer">
+        <el-button>Cancel</el-button>
+        <el-button type="primary">Confirm</el-button>
+      </span>
+    </template>
+  </rsh-dialog>
 </template>
 
 <script>
