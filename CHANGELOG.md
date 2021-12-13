@@ -25,6 +25,7 @@
  - | 新增权限用户，生成不同权限菜单 | [c68acb6](https://github.com/Calvin66/vite-vue3-admin/commit/c68acb6)
  - | 新增axios | [212904d](https://github.com/Calvin66/vite-vue3-admin/commit/212904d)
  - | 新增nprogress | [67c1968](https://github.com/Calvin66/vite-vue3-admin/commit/67c1968)
+ - | 新增rsh-icon;rsh-dialog | [ec92703](https://github.com/Calvin66/vite-vue3-admin/commit/ec92703)
  - | 新增stylelint:校验css样式 | [4119f34](https://github.com/Calvin66/vite-vue3-admin/commit/4119f34)
  - | 新增vuex | [cc85eb2](https://github.com/Calvin66/vite-vue3-admin/commit/cc85eb2)
  - | 引入vuex | [d1c7f72](https://github.com/Calvin66/vite-vue3-admin/commit/d1c7f72)

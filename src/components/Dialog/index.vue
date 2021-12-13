@@ -1,7 +1,7 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-10 14:18:35
- * @FilePath: \src\components\Dialog\index.vue
+ * @FilePath: /src/components/Dialog/index.vue
  * @Description: 公共弹窗
 -->
 <template>
@@ -19,6 +19,12 @@
       :closeOnPressEscape="closeOnPressEscape"
       :showClose="showClose"
       :center="center"
+      :destroyOnClose="destroyOnClose"
+      @open="handleOpen"
+      @opened="handleOpend"
+      :beforeClose="handleBeforeClose"
+      @close="handelClose"
+      @closed="handelClosed"
     >
       <template v-if="!hiddenControls" #title>
         <div class="rsh-dialog__header">
@@ -38,7 +44,7 @@
             ></rsh-icon>
             <rsh-icon
               v-if="hasControls('close')"
-              @click="handleClose"
+              @click="onClose"
               name="Close"
               class="rsh-dialog__controls-icon"
             ></rsh-icon>
@@ -95,7 +101,7 @@ export default {
     customClass: String,
     closeOnClickModal: {
       type: Boolean,
-      default: true
+      default: false
     },
     closeOnPressEscape: {
       type: Boolean,
@@ -109,6 +115,7 @@ export default {
       type: Boolean,
       default: false
     },
+    beforeClose: Function,
     //头部控件
     controls: {
       type: Array,
@@ -118,9 +125,14 @@ export default {
     hiddenControls: {
       type: Boolean,
       default: false
+    },
+    //关闭时销毁 DOM 内容
+    destroyOnClose: {
+      type: Boolean,
+      default: false
     }
   },
-  emits: ['update:visible'],
+  emits: ['open', 'opened', 'beforeClose', 'update:visible', 'close', 'closed'],
   setup(props, { emit }) {
     const fullscreen = ref(false)
     const maxHeight = computed(() => {
@@ -142,14 +154,45 @@ export default {
     const changeFullscreen = (type) => {
       fullscreen.value = type
     }
-    const handleClose = () => {
-      emit('update:visible', false)
+
+    const handleOpen = () => {
+      emit('update:visible', true)
+      emit('open')
+    }
+    const handleOpend = () => {
+      emit('opened')
+    }
+    const handleBeforeClose = () => {
+      if (props.beforeClose) {
+        props.beforeClose()
+      } else {
+        onClose()
+      }
+    }
+    const onClose = () => {
+      if (props.beforeClose) {
+        props.beforeClose()
+      } else {
+        emit('update:visible', false)
+      }
+    }
+    const handelClose = () => {
+      emit('close')
+      onClose()
+    }
+    const handelClosed = () => {
+      emit('closed')
     }
     return {
       maxHeight,
       styleObject,
       fullscreen,
-      handleClose,
+      handleOpen,
+      handleOpend,
+      handleBeforeClose,
+      onClose,
+      handelClose,
+      handelClosed,
       hasControls,
       changeFullscreen
     }

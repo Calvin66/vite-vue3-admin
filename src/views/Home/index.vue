@@ -1,7 +1,7 @@
 <!--
  * @Author: Calvin
  * @Date: 2021-12-03 22:15:33
- * @FilePath: \src\views\Home\index.vue
+ * @FilePath: /src/views/Home/index.vue
  * @Description: 
 -->
 <template>
@@ -10,12 +10,8 @@
       按钮
     </el-button>
   </div>
-  <rsh-dialog
-    v-model:visible="visible"
-    :controls="['fullscreen', 'close']"
-    title="弹框"
-  >
-    <!-- <div v-for="i in 1000" :key="i">测试高度</div> -->
+  <rsh-dialog v-model:visible="visible" title="弹框">
+    <div v-for="i in 1000" :key="i">测试高度</div>
 
     <template #footer>
       <span class="dialog-footer">
@@ -35,9 +31,22 @@ export default {
     const showDialog = () => {
       visible.value = true
     }
+    const close = () => {
+      console.log('关闭按钮')
+    }
+    const handleOpen = () => {
+      console.log('开启按钮')
+    }
+    const beforeClose = () => {
+      console.log('关闭前操作')
+      // visible.value = false
+    }
     return {
       visible,
-      showDialog
+      showDialog,
+      close,
+      handleOpen,
+      beforeClose
     }
   }
 }
