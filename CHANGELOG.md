@@ -1,8 +1,9 @@
-# 0.0.0 (2021-12-12)
+# 0.0.0 (2021-12-13)
 
 ### 🌟 新功能
 范围|描述|commitId
 --|--|--
+ - | 安装jsx插件 | [4a1bca6](https://github.com/Calvin66/vite-vue3-admin/commit/4a1bca6)
  - | 按需引入element-plus | [d3f39dc](https://github.com/Calvin66/vite-vue3-admin/commit/d3f39dc)
  - | 侧边栏配置 | [1ed75f3](https://github.com/Calvin66/vite-vue3-admin/commit/1ed75f3)
  - | 侧边栏图标 | [0e8974d](https://github.com/Calvin66/vite-vue3-admin/commit/0e8974d)

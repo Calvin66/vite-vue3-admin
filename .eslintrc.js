@@ -23,7 +23,9 @@ module.exports = {
   extends: [
     'plugin:vue/vue3-essential',
     'eslint:recommended',
+    '@vue/typescript/recommended',
     '@vue/prettier',
+    '@vue/prettier/@typescript-eslint'
   ],
   plugins: ["simple-import-sort"],
   parserOptions: {
@@ -43,5 +45,12 @@ module.exports = {
     "simple-import-sort/exports": 1,// exports文件排序
     "prettier/prettier": ["warn", {"singleQuote": true}],
     "vue/no-unused-components":1,
+    '@typescript-eslint/no-explicit-any': ['off'],
+    '@typescript-eslint/explicit-module-boundary-types': ['off'],
+    '@typescript-eslint/ban-ts-comment': ['off'],
+    'vue/no-setup-props-destructure': ['off'],
+    '@typescript-eslint/no-empty-function': ['off'],
+    //can config  to 2 if need more then required
+    '@typescript-eslint/no-unused-vars': [1],
   }
 }
