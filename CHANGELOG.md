@@ -1,4 +1,4 @@
-# 0.0.0 (2021-12-13)
+# 0.0.0 (2021-12-14)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -20,6 +20,7 @@
  - | 头部导航栏面包屑 | [11705dd](https://github.com/Calvin66/vite-vue3-admin/commit/11705dd)
  - | 头部导航栏展示一级菜单 | [59fa5dc](https://github.com/Calvin66/vite-vue3-admin/commit/59fa5dc)
  - | 退出登录功能 | [45a23c1](https://github.com/Calvin66/vite-vue3-admin/commit/45a23c1)
+ - | 完成rsh-dialog组件开发 | [30952bb](https://github.com/Calvin66/vite-vue3-admin/commit/30952bb)
  - | 完善侧边栏 | [332b99f](https://github.com/Calvin66/vite-vue3-admin/commit/332b99f)
  - | 新增侧边栏 | [53acaaf](https://github.com/Calvin66/vite-vue3-admin/commit/53acaaf)
  - | 新增权限用户，生成不同权限菜单 | [c68acb6](https://github.com/Calvin66/vite-vue3-admin/commit/c68acb6)
