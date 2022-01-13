@@ -48,10 +48,10 @@ export default {
             const btnPermissionList = res.buttonList || []
             commit('setBtnPermissionList', btnPermissionList)
             /* 根据权限刷选出我们设置好的路由并加入到 path='/' 的children */
-            const routes = recurseRoutes(permissionList, dynamicRoutes)
+            // const routes = recurseRoutes(permissionList, dynamicRoutes)
 
             // 开放本地菜单权限
-            // const routes = dynamicRoutes
+            const routes = dynamicRoutes
             const MainContainer = staticRoutes.find((item) => item.path === '/')
             // 初始化children路由
             const children = MainContainer.children

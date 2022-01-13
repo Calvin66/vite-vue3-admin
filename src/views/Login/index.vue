@@ -85,14 +85,15 @@ export default {
             }
           }
           login(data).then((res) => {
-            // const { token, username, role } = res
-            // store.commit('user/setUerInfo', {
-            //   username,
-            //   role
-            // })
-            // store.commit('user/setToken', token)
+            const { token } = res.data
+            const { username, role } = res.data.user
+            store.commit('user/setUerInfo', {
+              username,
+              role
+            })
+            store.commit('user/setToken', token)
             ElMessage.success(res.msg)
-            // router.push({ path: '/' })
+            router.push({ path: '/' })
           })
         } else {
           return false

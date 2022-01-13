@@ -9,7 +9,7 @@ import request from '@/utils/request'
 export function getPermissionMenus() {
   return request(
     {
-      url: '/user/permissionMenu',
+      url: '/user/getRoleResourceTree',
       method: 'get',
       params: {}
     },

@@ -8,6 +8,7 @@
  - | 侧边栏配置 | [1ed75f3](https://github.com/Calvin66/vite-vue3-admin/commit/1ed75f3)
  - | 侧边栏图标 | [0e8974d](https://github.com/Calvin66/vite-vue3-admin/commit/0e8974d)
  - | 侧边栏icon显示 | [3bd40e4](https://github.com/Calvin66/vite-vue3-admin/commit/3bd40e4)
+ - | 登录接口联调 | [4e0cc11](https://github.com/Calvin66/vite-vue3-admin/commit/4e0cc11)
  - | 顶部导航栏加入一级菜单 | [61e96a3](https://github.com/Calvin66/vite-vue3-admin/commit/61e96a3)
  - | 顶部导航栏用户中心 | [fb2dd8a](https://github.com/Calvin66/vite-vue3-admin/commit/fb2dd8a)
  - | 动态路由 | [92aeb57](https://github.com/Calvin66/vite-vue3-admin/commit/92aeb57)

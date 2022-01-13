@@ -82,7 +82,6 @@ function request(axiosConfig, customOptions, loadingOptions) {
   service.interceptors.response.use(
     (response) => {
       const data = response.data
-      console.log(data, '打印数据')
       removePending(response.config)
       custom_options.loading && closeLoading(custom_options) // 关闭loading
 
