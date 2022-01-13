@@ -78,18 +78,21 @@ export default {
     const submitForm = () => {
       loginFormRef.value.validate((valid) => {
         if (valid) {
-          login({
-            username: state.loginForm.username,
-            password: state.loginForm.password
-          }).then((res) => {
-            const { token, username, role } = res
-            store.commit('user/setUerInfo', {
-              username,
-              role
-            })
-            store.commit('user/setToken', token)
-            ElMessage.success(res.message)
-            router.push({ path: '/' })
+          const data = {
+            data: {
+              username: state.loginForm.username,
+              password: state.loginForm.password
+            }
+          }
+          login(data).then((res) => {
+            // const { token, username, role } = res
+            // store.commit('user/setUerInfo', {
+            //   username,
+            //   role
+            // })
+            // store.commit('user/setToken', token)
+            ElMessage.success(res.msg)
+            // router.push({ path: '/' })
           })
         } else {
           return false

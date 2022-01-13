@@ -1,4 +1,4 @@
-# 0.0.0 (2021-12-14)
+# 0.0.0 (2022-01-13)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -23,6 +23,7 @@
  - | 完成rsh-dialog组件开发 | [30952bb](https://github.com/Calvin66/vite-vue3-admin/commit/30952bb)
  - | 完善侧边栏 | [332b99f](https://github.com/Calvin66/vite-vue3-admin/commit/332b99f)
  - | 新增侧边栏 | [53acaaf](https://github.com/Calvin66/vite-vue3-admin/commit/53acaaf)
+ - | 新增公共组件通信mitt | [8c92264](https://github.com/Calvin66/vite-vue3-admin/commit/8c92264)
  - | 新增权限用户，生成不同权限菜单 | [c68acb6](https://github.com/Calvin66/vite-vue3-admin/commit/c68acb6)
  - | 新增axios | [212904d](https://github.com/Calvin66/vite-vue3-admin/commit/212904d)
  - | 新增nprogress | [67c1968](https://github.com/Calvin66/vite-vue3-admin/commit/67c1968)

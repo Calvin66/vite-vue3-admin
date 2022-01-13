@@ -9,7 +9,7 @@ import request from '@/utils/request'
 export function getPermissionMenus() {
   return request(
     {
-      url: '/mock/user/permissionMenu',
+      url: '/user/permissionMenu',
       method: 'get',
       params: {}
     },

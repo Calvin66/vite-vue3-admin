@@ -5,7 +5,9 @@
  * @Description: 
 -->
 <template>
-  <div class="menu-container">二级菜单__一级菜单</div>
+  <div class="menu-container">
+    <div v-for="i in 200" :key="i">{{ i }}二级菜单__一级菜单</div>
+  </div>
 </template>
 
 <script>
@@ -14,4 +16,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.menu-container {
+  background: #ffffff;
+}
+</style>

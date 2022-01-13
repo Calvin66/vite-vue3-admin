@@ -45,8 +45,11 @@ export default {
     },
     //移除用户信息
     userRemove({ commit }) {
-      commit('clearUerInfo')
-      commit('clearToken')
+      return new Promise((resolve) => {
+        commit('clearUerInfo')
+        commit('clearToken')
+        resolve()
+      })
     }
   },
   getters: {}

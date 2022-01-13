@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { ElLoading, ElMessage } from 'element-plus'
 
+import store from '@/store'
 import { getToken } from '@/utils/auth'
 
 const pendingMap = new Map()
@@ -33,10 +34,9 @@ const LoadingInstance = {
  */
 function request(axiosConfig, customOptions, loadingOptions) {
   const service = axios.create({
-    baseURL: '', // 设置统一的请求前缀
+    baseURL: import.meta.env.VITE_BASE_API, // 设置统一的请求前缀
     timeout: 10000 // 设置统一的超时时长
   })
-
   // 自定义配置
   let custom_options = Object.assign(
     {
@@ -81,21 +81,20 @@ function request(axiosConfig, customOptions, loadingOptions) {
   // 响应拦截(根据项目需求自行配置)
   service.interceptors.response.use(
     (response) => {
-      const data = response.data.data
+      const data = response.data
+      console.log(data, '打印数据')
       removePending(response.config)
       custom_options.loading && closeLoading(custom_options) // 关闭loading
 
+      //处理错误信息
       if (custom_options.code_message_show && data && !data.isSuccess) {
         ElMessage({
           type: 'error',
-          message: data.message
+          message: data.msg
         })
-        return Promise.reject(data) // code不等于0, 页面具体逻辑就不执行了
+        return Promise.reject(response.data)
       }
-      return data
-      // return custom_options.reduct_data_format
-      //   ? response.data
-      //   : response
+      return response.data
     },
     (error) => {
       error.config && removePending(error.config)
@@ -129,6 +128,10 @@ function httpErrorStatusHandle(error) {
         break
       case 401:
         message = '您未登录，或者登录已经超时，请先登录！'
+        store.dispatch('user/userRemove').then(() => {
+          location.reload()
+        })
+
         break
       case 403:
         message = '您没有权限操作！'
